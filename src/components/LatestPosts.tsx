@@ -15,7 +15,7 @@ export default function LatestPosts() {
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Executive insights</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Strategy, systems, and delivery notes
+              Executive summary — insights
             </h2>
             <p className="text-muted mb-0">
               Playbooks on governance, performance, and scalable design systems.

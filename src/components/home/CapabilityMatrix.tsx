@@ -76,9 +76,9 @@ export default function CapabilityMatrix() {
                         Capabilities
                     </span>
                     <h2 className="text-5xl md:text-6xl font-medium text-white tracking-tight leading-[1.1]">
-                        Engineering <br />
+                        Executive summary — capabilities. <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/40">
-                            meets Artistry.
+                            Systems and delivery.
                         </span>
                     </h2>
                 </div>
