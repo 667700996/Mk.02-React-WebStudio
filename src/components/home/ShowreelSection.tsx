@@ -5,7 +5,7 @@ import ViewportReveal from '@/components/ViewportReveal';
 
 export default function ShowreelSection() {
   return (
-    <section className="py-5">
+    <section className="py-5" id="showreel">
       <div className="studio-container">
         <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
           <div>

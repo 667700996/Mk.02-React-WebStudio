@@ -2,8 +2,9 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform, Variants } from 'framer-motion';
+import { motion, useScroll, useTransform, Variants, useReducedMotion } from 'framer-motion';
 import { ArrowRight, Play, CheckCircle2, Box } from 'lucide-react';
+import HeroNetwork from '@/components/home/HeroNetwork';
 
 const textVariant: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -31,6 +32,7 @@ const staggerContainer = {
 export default function RebootHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
+  const shouldReduceMotion = useReducedMotion();
   
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
   const y = useTransform(scrollY, [0, 400], [0, 100]);
@@ -43,6 +45,7 @@ export default function RebootHero() {
          <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-accent-secondary/5 blur-[140px] mix-blend-screen animate-pulse-slow" style={{ animationDelay: '4s' }} />
          <div className="absolute top-[40%] left-[40%] w-[40vw] h-[40vw] rounded-full bg-purple-500/5 blur-[100px] mix-blend-overlay animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
+      {!shouldReduceMotion && <HeroNetwork />}
 
       <div className="studio-container position-relative z-10 h-full flex flex-col justify-center">
         <motion.div 
@@ -76,7 +79,7 @@ export default function RebootHero() {
           <motion.div variants={textVariant}>
             <p className="text-xl md:text-2xl text-secondary mb-12 max-w-3xl mx-auto leading-relaxed font-light">
               We build universal design systems that bend physics. <br className="hidden md:block" />
-              <span className="text-white/60">From immersive portfolios to enterprise product layers.</span>
+              <span className="text-white/60">From cinematic portfolios to enterprise product layers, all on one OS.</span>
             </p>
           </motion.div>
 
@@ -86,7 +89,7 @@ export default function RebootHero() {
               <span>Deploy System</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link href="#showcase" className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white font-medium text-base hover:bg-white/10 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 backdrop-blur-sm">
+            <Link href="#showreel" className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white font-medium text-base hover:bg-white/10 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 backdrop-blur-sm">
               <Play className="w-4 h-4 fill-current" />
               <span>Showreel</span>
             </Link>
