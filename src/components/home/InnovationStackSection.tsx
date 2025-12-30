@@ -18,13 +18,14 @@ export default function InnovationStackSection() {
               Motion budgets, RUM instrumentation, and release guardrails baked into every surface.
             </p>
           </div>
-          <div className="d-flex flex-wrap gap-2">
-            {performanceSignals.map((signal) => (
-              <span key={signal.label} className="badge bg-opacity-10 bg-light text-light text-uppercase letter-spacing-1">
-                {signal.value}
-              </span>
-            ))}
-          </div>
+        </div>
+        <div className="exec-summary-grid mb-10">
+          {performanceSignals.map((signal) => (
+            <div key={signal.label} className="exec-summary-card">
+              <div className="exec-summary-label">{signal.label}</div>
+              <div className="exec-summary-value">{signal.value}</div>
+            </div>
+          ))}
         </div>
         <Row className="g-4">
           {deepSystems.map((item, idx) => (
