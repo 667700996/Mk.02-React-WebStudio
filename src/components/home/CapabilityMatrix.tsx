@@ -44,59 +44,34 @@ const gridItems = [
 ];
 
 function CleanCard({ item }: { item: typeof gridItems[0] }) {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
-    const { left, top } = currentTarget.getBoundingClientRect();
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
   return (
-    <div
-      className="group relative border border-white/5 bg-surface-1 px-6 py-8 transition-colors hover:bg-white/[0.02]"
-      onMouseMove={handleMouseMove}
-    >
-      <motion.div
-        className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100 z-10"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              400px circle at ${mouseX}px ${mouseY}px,
-              rgba(255, 255, 255, 0.1),
-              transparent 80%
-            )
-          `,
-        }}
-      />
-      <div className="relative h-full flex flex-col z-20">
-        <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 text-secondary group-hover:text-white transition-colors">
-            {item.icon}
-        </div>
-        
-        <h3 className="mb-2 text-lg font-semibold text-white group-hover:text-white transition-colors">
-            {item.title}
-        </h3>
-        <p className="mb-6 text-sm text-secondary leading-relaxed flex-grow">
-            {item.description}
-        </p>
-
-        <div className="flex flex-wrap gap-2 mt-auto">
-            {item.stats.map((stat, i) => (
-                <span key={i} className="text-[10px] font-mono uppercase tracking-wider px-2 py-1 rounded bg-white/5 text-muted">
-                    {stat}
-                </span>
-            ))}
-        </div>
+    <div className="group relative p-6 transition-all duration-300 hover:bg-white/[0.02] rounded-2xl">
+      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-secondary group-hover:text-accent-primary group-hover:bg-accent-primary/10 transition-colors">
+          {item.icon}
       </div>
+      
+      <h3 className="mb-3 text-lg font-medium text-white">
+          {item.title}
+      </h3>
+      <p className="mb-6 text-sm text-secondary/80 leading-relaxed">
+          {item.description}
+      </p>
+
+      <ul className="space-y-2">
+          {item.stats.map((stat, i) => (
+              <li key={i} className="flex items-center text-xs text-muted group-hover:text-secondary transition-colors">
+                  <span className="w-1 h-1 rounded-full bg-white/20 mr-2 group-hover:bg-accent-primary/50" />
+                  {stat}
+              </li>
+          ))}
+      </ul>
     </div>
   );
 }
 
 export default function CapabilityMatrix() {
   return (
-    <section className="py-24 bg-surface-0 relative border-t border-white/5" id="capabilities">
+    <section className="py-32 bg-surface-0 relative" id="capabilities">
         <div className="studio-container relative z-10">
             <div className="mb-20 text-center max-w-3xl mx-auto">
                 <span className="text-xs font-semibold text-accent-primary tracking-[0.2em] uppercase mb-4 block">
@@ -110,7 +85,7 @@ export default function CapabilityMatrix() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-white/5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                 {gridItems.map((item, index) => (
                     <CleanCard key={index} item={item} />
                 ))}
