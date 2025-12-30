@@ -13,6 +13,7 @@ const InnovationStackSection = dynamic(() => import('@/components/home/Innovatio
 const HyperPlaygroundSection = dynamic(() => import('@/components/home/HyperPlaygroundSection'));
 const SystemBlueprint = dynamic(() => import('@/components/home/SystemBlueprint'));
 const WorkShowcases = dynamic(() => import('@/components/home/WorkShowcases'));
+const LatestPosts = dynamic(() => import('@/components/LatestPosts'));
 const CapabilityMatrix = dynamic(() => import('@/components/home/CapabilityMatrix'));
 const FinalCta = dynamic(() => import('@/components/home/FinalCta'));
 
@@ -32,6 +33,7 @@ export default function Home() {
       <HyperPlaygroundSection />
       <SystemBlueprint />
       <WorkShowcases />
+      <LatestPosts />
       <CapabilityMatrix />
       <FinalCta />
     </main>

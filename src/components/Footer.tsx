@@ -44,10 +44,10 @@ export default function Footer() {
           <Col lg={2} sm={6}>
             <h6 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Product</h6>
             <ul className="list-unstyled d-flex flex-column gap-3">
-              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Framework</Link></li>
-              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Design Tokens</Link></li>
-              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Motion Kit</Link></li>
-              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Changelog</Link></li>
+              <li><Link href="/#system" className="text-secondary hover:text-white transition-colors">Framework</Link></li>
+              <li><Link href="/#capabilities" className="text-secondary hover:text-white transition-colors">Design Tokens</Link></li>
+              <li><Link href="/#showreel" className="text-secondary hover:text-white transition-colors">Motion Kit</Link></li>
+              <li><Link href="/#case-studies" className="text-secondary hover:text-white transition-colors">Case Library</Link></li>
             </ul>
           </Col>
 
@@ -56,7 +56,7 @@ export default function Footer() {
             <ul className="list-unstyled d-flex flex-column gap-3">
               <li><Link href="/about" className="text-secondary hover:text-white transition-colors">About</Link></li>
               <li><Link href="/blog" className="text-secondary hover:text-white transition-colors">Blog</Link></li>
-              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Careers</Link></li>
+              <li><Link href="/terms" className="text-secondary hover:text-white transition-colors">Terms</Link></li>
               <li><Link href="/contact" className="text-secondary hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </Col>
