@@ -22,7 +22,7 @@ export default function HyperText({
       setIsScrambling(true);
       let iteration = 0;
       const interval = setInterval(() => {
-        setDisplayText((prev) =>
+        setDisplayText(() =>
           text.split('').map((char, index) => {
             if (index < iteration) {
               return text[index];
