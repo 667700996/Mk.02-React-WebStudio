@@ -40,7 +40,7 @@ export default function ScrollScenesSection() {
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Scroll Story</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Scroll to see the build operate
+              Executive summary — build choreography
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '620px' }}>
               Each phase reacts as you scroll—mirroring how the system responds to launches, updates, and experiments.

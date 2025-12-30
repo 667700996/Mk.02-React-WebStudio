@@ -11,7 +11,7 @@ export default function AnimationGallerySection() {
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Animation gallery</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Motion vocabulary on display
+              Executive summary — motion vocabulary
             </h2>
             <p className="text-muted mb-0">Reusable animation motifs tuned for performance budgets and accessibility.</p>
           </div>

@@ -13,7 +13,7 @@ export default function MotionChoreoSection() {
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Motion lab</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Choreography with performance guardrails
+              Executive summary — motion governance
             </h2>
             <p className="text-muted mb-0">Every motion pattern is orchestrated with GPU-friendly transforms and reduced-motion fallbacks.</p>
           </div>
