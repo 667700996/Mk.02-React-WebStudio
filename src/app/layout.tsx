@@ -11,6 +11,7 @@ import ScrollProgressBar from '@/components/ScrollProgressBar';
 import SmoothScrolling from '@/components/ui/SmoothScrolling';
 import MouseTrailer from '@/components/ui/MouseTrailer';
 import FloatingDock from '@/components/ui/FloatingDock';
+import CommandMenu from '@/components/CommandMenu';
 
 const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -68,6 +69,7 @@ export default function RootLayout({
             <div style={{ flex: '1 0 auto' }}>{children}</div>
             <Footer />
             <FloatingDock />
+            <CommandMenu />
             <Suspense fallback={null}>
               <Analytics />
             </Suspense>

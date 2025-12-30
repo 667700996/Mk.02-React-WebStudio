@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring, Variants } from 'framer-motion';
 import { ArrowRight, Play, CheckCircle2, Box } from 'lucide-react';
-import Hero3DScene from './Hero3DScene';
+import HeroNetwork from './HeroNetwork';
 
 const textVariant: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -46,7 +46,7 @@ export default function RebootHero() {
     <section ref={containerRef} className="reboot-hero position-relative overflow-hidden min-vh-100 d-flex align-items-center">
       {/* Cinematic Background Layer */}
       <div className="position-absolute top-0 start-0 w-100 h-100 z-0 pointer-events-none">
-        <Hero3DScene />
+        <HeroNetwork />
         <motion.div 
           style={{ y: smoothY1 }}
           className="position-absolute top-0 start-0 w-100 h-100 opacity-20"
