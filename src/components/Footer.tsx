@@ -3,10 +3,16 @@
 import Link from 'next/link';
 import { Container, Row, Col } from 'react-bootstrap';
 import { siteConfig } from '@/lib/siteConfig';
-import { ArrowRight, Github, Twitter, Linkedin } from 'lucide-react';
+import { ArrowRight, Github, Twitter, Linkedin, Youtube } from 'lucide-react';
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const iconMap: Record<string, React.ReactNode> = {
+    GitHub: <Github className="w-4 h-4" />,
+    'X (Twitter)': <Twitter className="w-4 h-4" />,
+    LinkedIn: <Linkedin className="w-4 h-4" />,
+    YouTube: <Youtube className="w-4 h-4" />,
+  };
 
   return (
     <footer className="py-8 mt-auto border-t border-white/5 bg-surface-1">
@@ -22,15 +28,16 @@ export default function Footer() {
             </div>
             
             <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:bg-white/10 hover:text-white transition-all">
-                    <Github className="w-4 h-4" />
+              {siteConfig.socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:bg-white/10 hover:text-white transition-all"
+                  aria-label={social.label}
+                >
+                  {iconMap[social.label]}
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:bg-white/10 hover:text-white transition-all">
-                    <Twitter className="w-4 h-4" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:bg-white/10 hover:text-white transition-all">
-                    <Linkedin className="w-4 h-4" />
-                </a>
+              ))}
             </div>
           </Col>
           
