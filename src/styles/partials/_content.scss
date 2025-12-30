@@ -1,5 +1,16 @@
 /* Content & Layout Sections */
 
+.exec-section {
+  padding-block: clamp(3.5rem, 8vw, 5.5rem);
+}
+.exec-head {
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.exec-head h2,
+.exec-head h3 {
+  font-family: var(--font-display);
+}
+
 .signal-marquee { padding-block: 1rem; overflow: hidden; }
 .signal-track {
   display: inline-flex; gap: 1rem; animation: marquee 26s linear infinite; min-width: max-content; align-items: center; white-space: nowrap;
