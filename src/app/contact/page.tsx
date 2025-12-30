@@ -160,12 +160,12 @@ export default function ContactPage() {
               </Form>
 
               {submissionStatus === 'success' && (
-                <Alert variant="success" className="mt-4">
+                <Alert variant="success" className="mt-4" role="status" aria-live="polite">
                   Your message has been sent successfully. We will be in touch shortly.
                 </Alert>
               )}
               {submissionStatus === 'error' && (
-                <Alert variant="danger" className="mt-4">
+                <Alert variant="danger" className="mt-4" role="alert" aria-live="assertive">
                   Something went wrong. Please try again later or email us directly.
                 </Alert>
               )}
