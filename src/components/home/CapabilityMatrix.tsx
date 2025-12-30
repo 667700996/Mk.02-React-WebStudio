@@ -1,7 +1,5 @@
 'use client';
 
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-import { MouseEvent } from 'react';
 import { Layers, Zap, Activity, Grid, Command, Cpu } from 'lucide-react';
 
 const gridItems = [
