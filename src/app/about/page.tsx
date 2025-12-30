@@ -30,7 +30,7 @@ export default function AboutPage() {
       <div className="studio-container">
         <section className="page-hero">
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">About {siteConfig.name}</span>
-          <h1 className="display-5 fw-bold mt-3">A studio built for enterprise-grade web systems.</h1>
+          <h1 className="display-5 fw-bold mt-3">Executive summary — about the studio.</h1>
           <p className="lead mt-3">
             {siteConfig.name} blends narrative direction, product strategy, and engineering rigor. We build flagship systems
             that serve executives, product teams, and launch operations from a single foundation.

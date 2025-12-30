@@ -9,11 +9,11 @@ export default function FinalCta() {
       <div className="studio-container">
         <div className="final-shell glass-card">
           <div>
-            <p className="mono-pill">Let&apos;s build the flagship</p>
-            <h3>Show investors, partners, and recruits what you can really ship.</h3>
+            <p className="mono-pill">Executive summary</p>
+            <h3>Next steps for a flagship engagement.</h3>
             <p className="section-copy">
-              We&apos;ll align on narrative, design system, and launch roadmap—then ship a site that looks iconic, loads fast,
-              and proves your technical edge.
+              We&apos;ll align narrative, system architecture, and release governance, then deliver a site that is fast, credible,
+              and built to scale.
             </p>
           </div>
 
