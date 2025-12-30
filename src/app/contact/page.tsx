@@ -1,6 +1,12 @@
 'use client';
 
+import type { Metadata } from 'next';
 import { useState } from 'react';
+
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Start a project and get a tailored plan for a premium, performance-led web system.',
+};
 import { Form, Alert } from 'react-bootstrap';
 
 export default function ContactPage() {
@@ -86,19 +92,19 @@ export default function ContactPage() {
                   <div className="col-md-6">
                     <Form.Group controlId="formName">
                       <Form.Label>Name</Form.Label>
-                      <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} required />
+                      <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} autoComplete="name" required />
                     </Form.Group>
                   </div>
                   <div className="col-md-6">
                     <Form.Group controlId="formEmail">
                       <Form.Label>Email</Form.Label>
-                      <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} required />
+                      <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} autoComplete="email" required />
                     </Form.Group>
                   </div>
                   <div className="col-md-6">
                     <Form.Group controlId="formCompany">
                       <Form.Label>Company</Form.Label>
-                      <Form.Control type="text" name="company" value={formData.company} onChange={handleChange} />
+                      <Form.Control type="text" name="company" value={formData.company} onChange={handleChange} autoComplete="organization" />
                     </Form.Group>
                   </div>
                   <div className="col-md-6">

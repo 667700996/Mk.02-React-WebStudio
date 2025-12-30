@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/siteConfig';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: `Learn how ${siteConfig.name} builds universal flagship systems for portfolio, product, and launch.`,
+};
 
 export default function AboutPage() {
   const pillars = [
