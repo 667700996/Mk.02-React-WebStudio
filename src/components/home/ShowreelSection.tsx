@@ -5,9 +5,9 @@ import ViewportReveal from '@/components/ViewportReveal';
 
 export default function ShowreelSection() {
   return (
-    <section className="py-5" id="showreel">
+    <section className="exec-section" id="showreel">
       <div className="studio-container">
-        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4 exec-head">
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Capability evidence</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
