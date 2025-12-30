@@ -111,7 +111,7 @@
 }
 .btn-animated::after {
   content: ''; position: absolute; inset: -40% -20%; background: radial-gradient(circle, rgba(255, 255, 255, 0.28), transparent 40%);
-  transform: translateX(-120%); animation: sheen 4s infinite;
+  transform: translateX(-120%);
 }
 .btn-animated:hover { transform: translateY(-1px) scale(1.01); box-shadow: 0 14px 30px rgba(var(--accent-glow), 0.25); }
 
