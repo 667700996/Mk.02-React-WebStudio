@@ -34,9 +34,9 @@ export default function ScrollScenesSection() {
   const currentScene = scrollScenes.find((scene) => scene.title === activeScene) ?? scrollScenes[0];
 
   return (
-    <section className="py-5">
+    <section className="exec-section">
       <div className="studio-container">
-        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+        <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4 exec-head">
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Scroll Story</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>

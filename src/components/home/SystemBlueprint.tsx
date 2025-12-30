@@ -38,9 +38,9 @@ const features = [
 
 export default function SystemBlueprint() {
   return (
-    <section className="py-24 relative overflow-hidden" id="system">
+    <section className="exec-section relative overflow-hidden" id="system">
       <div className="studio-container relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-20 exec-head">
             <span className="mono-pill border-white/10 bg-white/5 mb-6">System architecture</span>
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
                 Executive summary — system architecture. <br />

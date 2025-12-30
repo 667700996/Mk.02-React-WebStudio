@@ -29,9 +29,9 @@ export default function RealtimeDashboard() {
   }, []);
 
   return (
-    <section className="py-24 relative border-y border-white/5 bg-black/40 backdrop-blur-sm">
+    <section className="exec-section relative border-y border-white/5 bg-black/40 backdrop-blur-sm">
       <div className="studio-container">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6 exec-head">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
@@ -39,7 +39,7 @@ export default function RealtimeDashboard() {
             </div>
             <h2 className="text-3xl font-bold text-white tracking-tight">Executive summary — live telemetry</h2>
             <p className="text-white/60 mt-2 max-w-lg">
-              Real-time observability across edge nodes. Monitoring active sessions, resource consumption, and global latency.
+              Continuous observability across edge nodes, active sessions, and global latency.
             </p>
           </div>
           <div className="flex gap-4">
