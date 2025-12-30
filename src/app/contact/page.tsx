@@ -47,7 +47,7 @@ export default function ContactPage() {
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">Start a project</span>
           <h1 className="display-5 fw-bold mt-3">Tell us about your next release.</h1>
           <p className="lead mt-3">
-            Share a few details and we will respond within one business day with scope, timeline, and a tailored plan.
+            Share a few details and we will respond within one business day with scope, timeline, and delivery plan.
           </p>
         </section>
 
@@ -57,8 +57,8 @@ export default function ContactPage() {
               <h2 className="h4 text-white mb-3">What you can expect</h2>
               <ul className="text-muted d-grid gap-2 mb-4">
                 <li>Discovery call and narrative alignment within 72 hours.</li>
-                <li>System architecture, motion plan, and timeline in week one.</li>
-                <li>Launch-ready build with performance and a11y guardrails.</li>
+                <li>System architecture, governance plan, and timeline in week one.</li>
+                <li>Launch-ready build with performance and accessibility guardrails.</li>
               </ul>
               <div className="d-grid gap-3">
                 <div>
