@@ -5,11 +5,11 @@ import ViewportReveal from '../ViewportReveal';
 
 export default function MotionChoreoSection() {
   return (
-    <section className="py-5 py-lg-6 position-relative overflow-hidden">
+    <section className="exec-section position-relative overflow-hidden">
       <div className="studio-container position-relative">
         <div className="floating-orb orb-1" style={{ left: '14%', top: '16%', opacity: 0.28 }} />
         <div className="floating-orb orb-2" style={{ right: '6%', top: '20%', opacity: 0.28 }} />
-        <ViewportReveal className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4">
+        <ViewportReveal className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4 exec-head">
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Motion lab</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
