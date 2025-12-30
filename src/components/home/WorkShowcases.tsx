@@ -44,7 +44,7 @@ export default function WorkShowcases() {
             </button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {showcases.map((item, index) => (
             <motion.div
               key={index}
@@ -52,21 +52,25 @@ export default function WorkShowcases() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group relative flex flex-col justify-between h-full min-h-[360px] p-8 rounded-2xl bg-surface-1 border border-white/5 hover:border-white/20 transition-colors"
+              className="group relative flex flex-col justify-between h-full min-h-[400px] p-10 rounded-[2rem] bg-surface-1/50 border border-white/5 hover:border-white/10 transition-all duration-500 hover:-translate-y-1"
             >
-              <div>
-                <span className="text-xs font-mono text-muted uppercase tracking-wider mb-6 block">{item.category}</span>
-                <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-secondary leading-relaxed">{item.summary}</p>
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
+              
+              <div className="relative z-10">
+                <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[10px] font-bold text-white/60 uppercase tracking-widest mb-8">
+                    {item.category}
+                </span>
+                <h3 className="text-3xl font-bold text-white mb-4 tracking-tight leading-tight group-hover:text-accent-primary transition-colors duration-300">{item.title}</h3>
+                <p className="text-lg text-secondary leading-relaxed font-light">{item.summary}</p>
               </div>
 
-              <div className="pt-8 mt-auto border-t border-white/5 flex items-center justify-between">
-                <div className="flex flex-col">
-                    <span className="text-[10px] text-muted uppercase tracking-wider font-semibold">Impact</span>
-                    <span className="text-lg font-mono text-white">{item.metric}</span>
+              <div className="relative z-10 pt-8 mt-auto flex items-end justify-between border-t border-white/5">
+                <div>
+                    <span className="block text-[10px] text-muted uppercase tracking-widest font-semibold mb-2">Result</span>
+                    <span className="text-2xl font-mono text-white tracking-tight">{item.metric}</span>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
-                    <ArrowRight className="w-4 h-4 text-white -rotate-45 group-hover:rotate-0 transition-transform duration-300" />
+                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 group-hover:text-white group-hover:border-white/30 group-hover:bg-white/5 transition-all duration-300">
+                    <ArrowRight className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-500 ease-out" />
                 </div>
               </div>
             </motion.div>
