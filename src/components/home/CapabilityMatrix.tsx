@@ -98,15 +98,15 @@ export default function CapabilityMatrix() {
   return (
     <section className="py-24 bg-surface-0 relative border-t border-white/5" id="capabilities">
         <div className="studio-container relative z-10">
-            <div className="mb-16 max-w-2xl">
-                <span className="mono-pill border-white/10 bg-white/5 text-secondary mb-4">
+            <div className="mb-20 text-center max-w-3xl mx-auto">
+                <span className="text-xs font-semibold text-accent-primary tracking-[0.2em] uppercase mb-4 block">
                     Capabilities
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-                    Full-Stack Orchestration.
+                <h2 className="text-4xl md:text-5xl font-medium text-white tracking-tight mb-6 leading-tight">
+                    Integrated <span className="text-muted">Workflow.</span>
                 </h2>
-                <p className="text-lg text-secondary/80">
-                    We ship aligned squads—concept to code, instrumented and production-ready.
+                <p className="text-lg text-secondary leading-relaxed max-w-2xl mx-auto">
+                    From architectural blueprints to final pixel polish, we unify the entire product lifecycle under one rigorous system.
                 </p>
             </div>
 
