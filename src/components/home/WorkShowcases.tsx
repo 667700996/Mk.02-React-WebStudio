@@ -30,16 +30,16 @@ export default function WorkShowcases() {
       <div className="studio-container">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div className="max-w-2xl">
-                <span className="mono-pill border-white/10 bg-white/5 text-secondary mb-4">Selected Works</span>
+                <span className="mono-pill border-white/10 bg-white/5 text-secondary mb-4">Selected engagements</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-                    Engineering Precision.
+                    Enterprise delivery.
                 </h2>
                 <p className="text-lg text-secondary/80">
-                    Systems that blend technical rigor with cinematic user experiences.
+                    Systems that align leadership narratives with measurable product outcomes.
                 </p>
             </div>
             <button className="group flex items-center gap-2 text-white font-medium hover:text-accent-primary transition-colors">
-                <span>View all projects</span>
+                <span>View case library</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
         </div>

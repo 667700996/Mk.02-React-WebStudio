@@ -41,15 +41,15 @@ export default function SystemBlueprint() {
     <section className="py-24 relative overflow-hidden" id="system">
       <div className="studio-container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
-            <span className="mono-pill border-white/10 bg-white/5 mb-6">System Architecture</span>
+            <span className="mono-pill border-white/10 bg-white/5 mb-6">System architecture</span>
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-                One codebase. <br />
+                One system. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-tertiary">
-                    Infinite surfaces.
+                    Multiple executive surfaces.
                 </span>
             </h2>
             <p className="text-lg text-secondary">
-                We architect universal-grade foundations so your portfolio, product, and launch pages all share the same DNA.
+                We design a single system that powers portfolio narratives, product education, and launch operations with consistent governance.
             </p>
         </div>
 
