@@ -98,8 +98,8 @@
   background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18), rgba(var(--accent-glow), 0.1));
   pointer-events: none;
 }
-.floating-orb.orb-2 { width: 120px; height: 120px; right: 6%; top: 18%; animation-duration: 14s; }
-.floating-orb.orb-3 { width: 140px; height: 140px; left: 12%; bottom: 4%; animation-duration: 16s; }
+.floating-orb.orb-2 { width: 120px; height: 120px; right: 6%; top: 18%; }
+.floating-orb.orb-3 { width: 140px; height: 140px; left: 12%; bottom: 4%; }
 
 .ticker-shell { overflow: hidden; }
 .ticker-track { display: inline-flex; gap: 1rem; animation: marquee 18s linear infinite; min-width: max-content; }
@@ -140,10 +140,10 @@
 .omni-hero, .omni-case, .omni-product, .omni-launch {
   position: absolute; border-radius: var(--radius-sm); box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
 }
-.omni-hero { inset: 10% 45% 50% 5%; background: linear-gradient(135deg, rgba(var(--accent-glow), 0.2), rgba(255, 157, 111, 0.16)); animation-delay: 0s; }
-.omni-case { inset: 45% 30% 18% 10%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(126, 208, 255, 0.16)); animation-delay: 1.5s; }
-.omni-product { inset: 40% 8% 8% 52%; background: linear-gradient(135deg, rgba(var(--accent-glow), 0.2), rgba(255, 255, 255, 0.05)); animation-delay: 0.8s; }
-.omni-launch { inset: 15% 6% 60% 55%; background: linear-gradient(135deg, rgba(255, 157, 111, 0.22), rgba(255, 255, 255, 0.06)); animation-delay: 2.2s; }
+.omni-hero { inset: 10% 45% 50% 5%; background: linear-gradient(135deg, rgba(var(--accent-glow), 0.2), rgba(255, 157, 111, 0.16)); }
+.omni-case { inset: 45% 30% 18% 10%; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(126, 208, 255, 0.16)); }
+.omni-product { inset: 40% 8% 8% 52%; background: linear-gradient(135deg, rgba(var(--accent-glow), 0.2), rgba(255, 255, 255, 0.05)); }
+.omni-launch { inset: 15% 6% 60% 55%; background: linear-gradient(135deg, rgba(255, 157, 111, 0.22), rgba(255, 255, 255, 0.06)); }
 
 .lab-card { border: 1px solid rgba(var(--accent-glow), 0.2); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
 .lab-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-glow), 0.28); box-shadow: 0 22px 52px rgba(0, 0, 0, 0.32); }
