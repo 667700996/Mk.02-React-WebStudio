@@ -14,7 +14,7 @@ export default function ShowreelSection() {
               Executive summary — delivery evidence
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '640px' }}>
-              Portfolio, product, and launch surfaces delivered on a single system with measurable outcomes.
+              Portfolio, product, and launch surfaces delivered on a single system with measurable outcomes and governance.
             </p>
           </div>
           <span className="text-muted small text-uppercase letter-spacing-1">Scroll or drag</span>

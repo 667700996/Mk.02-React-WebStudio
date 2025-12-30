@@ -35,7 +35,7 @@ export default function RealtimeDashboard() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
-              <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">System Online</span>
+              <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">Operational</span>
             </div>
             <h2 className="text-3xl font-bold text-white tracking-tight">Executive summary — live telemetry</h2>
             <p className="text-white/60 mt-2 max-w-lg">

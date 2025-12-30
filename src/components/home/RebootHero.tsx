@@ -79,7 +79,7 @@ export default function RebootHero() {
           <motion.div variants={textVariant}>
             <p className="text-xl md:text-2xl text-secondary mb-12 max-w-3xl mx-auto leading-relaxed font-light">
               Strategy, design, and engineering unified into one flagship system. <br className="hidden md:block" />
-              <span className="text-white/60">Built to scale from executive narratives to product education and launch operations.</span>
+              <span className="text-white/60">Built for executive narratives, product education, and launch governance.</span>
             </p>
           </motion.div>
 
