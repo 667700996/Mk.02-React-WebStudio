@@ -58,7 +58,7 @@ export default function RebootHero() {
           {/* Badge */}
           <motion.div variants={textVariant} className="flex justify-center mb-10">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-md text-xs font-medium text-secondary tracking-widest uppercase">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
               Enterprise-grade system
             </span>
           </motion.div>
