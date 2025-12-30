@@ -43,9 +43,9 @@ export default function SystemBlueprint() {
         <div className="text-center max-w-3xl mx-auto mb-20">
             <span className="mono-pill border-white/10 bg-white/5 mb-6">System architecture</span>
             <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-6">
-                One system. <br />
+                Executive summary — system architecture. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-tertiary">
-                    Multiple executive surfaces.
+                    Multi-surface governance.
                 </span>
             </h2>
             <p className="text-lg text-secondary">

@@ -40,7 +40,7 @@ export default function RealtimeDashboard() {
               </span>
               <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">System Online</span>
             </div>
-            <h2 className="text-3xl font-bold text-white tracking-tight">Live System Telemetry</h2>
+            <h2 className="text-3xl font-bold text-white tracking-tight">Executive summary — live telemetry</h2>
             <p className="text-white/60 mt-2 max-w-lg">
               Real-time observability across edge nodes. Monitoring active sessions, resource consumption, and global latency.
             </p>

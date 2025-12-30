@@ -12,7 +12,7 @@ export default function InnovationStackSection() {
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Engineering stack</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Performance, observability, and governance at scale
+              Executive summary — engineering governance
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '620px' }}>
               Measurable motion budgets, RUM instrumentation, and release guardrails baked into every surface.
