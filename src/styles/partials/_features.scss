@@ -190,7 +190,6 @@
 .kinetic-card { border: 1px solid rgba(var(--accent-glow), 0.2); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
 .kinetic-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-glow), 0.28); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32); }
 .kinetic-meter { height: 8px; background: rgba(var(--accent-glow), 0.12); border-radius: 999px; overflow: hidden; }
-.kinetic-meter-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); width: 75%; animation: progressPulse 2.5s ease-in-out infinite; }
 .kinetic-meter-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); width: 75%; }
 
 .radar-card { border: 1px solid rgba(var(--accent-glow), 0.2); }
@@ -221,7 +220,6 @@
 .scheduler-row:hover { transform: translateY(-3px); border-color: rgba(var(--accent-glow), 0.3); box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25); }
 .scheduler-time { min-width: 90px; text-align: center; }
 .scheduler-bar { width: 100%; height: 6px; border-radius: 999px; background: rgba(var(--accent-glow), 0.12); overflow: hidden; }
-.scheduler-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); animation: progressPulse 2.2s ease-in-out infinite; }
 .scheduler-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); }
 
 .motion-card { border: 1px solid rgba(var(--accent-glow), 0.2); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
