@@ -3,41 +3,58 @@ import { siteConfig } from '@/lib/siteConfig';
 export default function AboutPage() {
   const pillars = [
     {
-      title: 'Small, senior crews',
+      title: 'Senior, compact teams',
       description:
-        'Every engagement is run by strategists, designers, and engineers who can switch contexts from brand to build without losing the plot.',
+        'Strategy, design, and engineering sit in one pod so narrative and execution stay aligned from day one.',
     },
     {
       title: 'Systems with taste',
       description:
-        'We balance expressive art direction with reusable foundations—tokens, libraries, and publishing flows you can keep using.',
+        'We pair bold art direction with reusable foundations: tokens, components, and publishing flows that scale.',
     },
     {
       title: 'Transparent momentum',
       description:
-        'Weekly demos, shared roadmaps, and instrumentation keep decisions visible from kickoff through the first iterations after launch.',
+        'Weekly demos, shared roadmaps, and instrumentation keep every decision visible through launch and iteration.',
     },
   ];
 
   return (
     <main className="py-5">
       <div className="studio-container">
-        <header className="text-center mb-5">
+        <section className="page-hero">
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">About {siteConfig.name}</span>
-          <h1 className="display-5 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-            A studio for teams who want their site to feel intentional
-          </h1>
-          <p className="text-muted lead mt-3" style={{ maxWidth: '780px', marginInline: 'auto' }}>
-            {siteConfig.name} blends story craft, product thinking, and engineering rigor. From portfolios to product surfaces,
-            we build experiences that stay fast, feel premium, and are simple to update.
+          <h1 className="display-5 fw-bold mt-3">A studio built for elite, adaptable web systems.</h1>
+          <p className="lead mt-3">
+            {siteConfig.name} blends narrative direction, product thinking, and engineering rigor. We build flagship sites
+            that operate as portfolio, product, and launch surfaces with a single system.
           </p>
-        </header>
+        </section>
+
+        <section className="stat-grid mb-5">
+          <div className="stat-card">
+            <div className="stat-label">Avg. launch</div>
+            <div className="stat-value">4-6 wks</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-label">Core Web Vitals</div>
+            <div className="stat-value">99/100</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-label">Reusable modules</div>
+            <div className="stat-value">120+</div>
+          </div>
+          <div className="stat-card">
+            <div className="stat-label">Update to live</div>
+            <div className="stat-value">&lt;20m</div>
+          </div>
+        </section>
 
         <section className="glass-card p-4 p-lg-5 mb-5">
           <h2 className="h3 text-white">How we partner</h2>
           <p className="text-muted mb-4">
             We embed with teams to clarify the narrative, design the system, and launch fast. You keep the toolkit: component
-            libraries, publishing guide, and instrumentation that makes every new release calmer.
+            libraries, publishing guide, and instrumentation that make every new release calmer.
           </p>
           <div className="d-grid gap-4 gap-lg-5">
             {pillars.map((pillar) => (
@@ -54,15 +71,15 @@ export default function AboutPage() {
           <div className="d-grid gap-3 mt-4">
             <div>
               <h3 className="h5 text-white mb-1">Avery Han — Partner, Strategy</h3>
-              <p className="text-muted mb-0">Guides discovery, messaging, and IA. Former product lead across B2B and creator tools.</p>
+              <p className="text-muted mb-0">Discovery, messaging, and information architecture. Former product lead across B2B and creator tools.</p>
             </div>
             <div>
               <h3 className="h5 text-white mb-1">Marcel Ortiz — Partner, Engineering</h3>
-              <p className="text-muted mb-0">Architects resilient React platforms and observability pipelines. Obsessed with polish and performance.</p>
+              <p className="text-muted mb-0">Architects resilient React platforms and observability pipelines with a focus on performance.</p>
             </div>
             <div>
               <h3 className="h5 text-white mb-1">Riya Desai — Partner, Design</h3>
-              <p className="text-muted mb-0">Leads visual language, interaction pacing, and editorial tone so every screen tells the same story.</p>
+              <p className="text-muted mb-0">Visual language, interaction pacing, and editorial systems that keep every screen on-brand.</p>
             </div>
           </div>
         </section>
