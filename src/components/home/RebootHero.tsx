@@ -2,16 +2,8 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform, useSpring, Variants } from 'framer-motion';
 import { ArrowRight, Play, CheckCircle2, Box } from 'lucide-react';
-import HyperText from '../ui/HyperText';
-
-// Lazy load heavy 3D component
-const HeroNetwork = dynamic(() => import('./HeroNetwork'), { 
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-transparent" /> 
-});
 
 const textVariant: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -51,19 +43,10 @@ export default function RebootHero() {
 
   return (
     <section ref={containerRef} className="reboot-hero position-relative overflow-hidden min-vh-100 d-flex align-items-center">
-      {/* Cinematic Background Layer */}
-      <div className="position-absolute top-0 start-0 w-100 h-100 z-0 pointer-events-none">
-        <HeroNetwork />
-        <motion.div 
-          style={{ y: smoothY1 }}
-          className="position-absolute top-0 start-0 w-100 h-100 opacity-20"
-        >
-          <div className="hero-aurora" style={{ top: '-20%', left: '-10%', width: '120%', height: '120%' }} />
-        </motion.div>
-        <motion.div 
-          style={{ y: smoothY2 }}
-          className="hero-ambient-grid position-absolute w-100 h-100" 
-        />
+      {/* Clean Background - Pure gradients, no noise/particles */}
+      <div className="position-absolute top-0 start-0 w-100 h-100 z-0 pointer-events-none bg-surface-0">
+         <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] rounded-full bg-accent-primary/5 blur-[120px]" />
+         <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-accent-secondary/5 blur-[100px]" />
       </div>
 
       <div className="studio-container position-relative z-10">
@@ -77,18 +60,13 @@ export default function RebootHero() {
           <div className="hero-shell">
             <motion.div variants={textVariant} className="hero-meta">
               <span className="hero-spark"></span>
-              <span className="mono-pill">System v2.5.0 Live</span>
-              <span className="badge-pill bg-white text-dark fw-bold">NEW</span>
+              <span className="mono-pill">System v2.5.0</span>
             </motion.div>
 
             <motion.div variants={textVariant} className="hero-copy">
-              <h1 className="display-1 fw-bold tracking-tighter mb-4">
-                <span className="d-block bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-                  <HyperText text="Architecting" />
-                </span>
-                <span className="d-block text-gradient-primary">
-                  <HyperText text="Digital Gravity." />
-                </span>
+              <h1 className="display-1 fw-bold tracking-tighter mb-4 text-white">
+                <span className="d-block">Architecting</span>
+                <span className="d-block text-secondary">Digital Gravity.</span>
               </h1>
               <p className="lead text-secondary mb-5 max-w-2xl">
                 We build universal design systems that bend physics. 

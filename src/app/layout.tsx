@@ -63,7 +63,6 @@ export default function RootLayout({
       <body className={`${sans.variable} ${display.variable} d-flex flex-column min-vh-100`}>
         <ThemeProvider attribute="data-bs-theme" defaultTheme="system" enableSystem>
           <SmoothScrolling>
-            <MouseTrailer />
             <ScrollProgressBar />
             <AppNavbar />
             <div style={{ flex: '1 0 auto' }}>{children}</div>
