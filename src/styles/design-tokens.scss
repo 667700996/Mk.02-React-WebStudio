@@ -1,55 +1,55 @@
 :root,
 [data-bs-theme='light'] {
-  --surface-0: #030305; /* Deepest Obsidian */
-  --surface-1: #0A0A0C; /* Slightly lighter obsidian */
-  --surface-2: #121215;
-  --surface-3: #1C1C20;
+  --surface-0: #05070b; /* Corporate midnight */
+  --surface-1: #0b0f17;
+  --surface-2: #101623;
+  --surface-3: #151b2a;
   --surface-inverse: #f6f8ff;
 
   --text-primary: #FFFFFF;
-  --text-secondary: #94A3B8; /* Slate 400 */
-  --text-muted: #64748B; /* Slate 500 */
+  --text-secondary: #9aa8bf;
+  --text-muted: #6d7c95;
   --text-inverse: #02050c;
 
-  --accent-primary: #38bdf8; /* Sky 400 - Corporate/Tech Blue */
-  --accent-secondary: #818cf8; /* Indigo 400 */
-  --accent-tertiary: #2dd4bf; /* Teal 400 */
-  --accent-glow: 56, 189, 248;
+  --accent-primary: #2f80ed; /* Enterprise blue */
+  --accent-secondary: #56ccf2; /* Tech cyan */
+  --accent-tertiary: #27ae60; /* System green */
+  --accent-glow: 47, 128, 237;
 
-  --border-strong: rgba(255, 255, 255, 0.15);
-  --border-soft: rgba(255, 255, 255, 0.06);
+  --border-strong: rgba(255, 255, 255, 0.12);
+  --border-soft: rgba(255, 255, 255, 0.05);
 
-  --gradient-hero: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.1));
-  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  --gradient-hero: linear-gradient(135deg, rgba(47, 128, 237, 0.18), rgba(86, 204, 242, 0.1));
+  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
 
-  --shadow-soft: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
-  --shadow-focus: 0 0 0 2px rgba(56, 189, 248, 0.5);
+  --shadow-soft: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+  --shadow-focus: 0 0 0 2px rgba(47, 128, 237, 0.45);
 
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 32px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 24px;
 
-  --container-max: 1200px; /* Tighter container for elegance */
+  --container-max: 1240px;
 }
 
 [data-bs-theme='dark'] {
   /* Inherit same rich dark theme for consistency, or adjust slightly */
-  --surface-0: #030305;
-  --surface-1: #0A0A0C;
-  --surface-2: #121215;
-  --surface-3: #1C1C20;
+  --surface-0: #05070b;
+  --surface-1: #0b0f17;
+  --surface-2: #101623;
+  --surface-3: #151b2a;
   --surface-inverse: #f3f6ff;
 
   --text-primary: #FFFFFF;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-secondary: #9aa8bf;
+  --text-muted: #6d7c95;
   --text-inverse: #02050c;
   
   /* ... same accents ... */
-  --accent-primary: #38bdf8;
-  --accent-secondary: #818cf8;
-  --accent-tertiary: #2dd4bf;
-  --accent-glow: 56, 189, 248;
+  --accent-primary: #2f80ed;
+  --accent-secondary: #56ccf2;
+  --accent-tertiary: #27ae60;
+  --accent-glow: 47, 128, 237;
 
   --border-strong: rgba(255, 255, 255, 0.15);
   --border-soft: rgba(255, 255, 255, 0.06);
@@ -58,7 +58,7 @@
 :root,
 [data-bs-theme='light'] {
   --bs-primary: var(--accent-primary);
-  --bs-primary-rgb: 126, 242, 201;
+  --bs-primary-rgb: 47, 128, 237;
   --bs-body-color: var(--text-secondary);
   --bs-body-bg: var(--surface-0);
   --bs-heading-color: var(--text-primary);
@@ -66,7 +66,7 @@
 
 [data-bs-theme='dark'] {
   --bs-primary: var(--accent-primary);
-  --bs-primary-rgb: 144, 255, 216;
+  --bs-primary-rgb: 47, 128, 237;
   --bs-body-color: var(--text-secondary);
   --bs-body-bg: var(--surface-0);
   --bs-heading-color: var(--text-primary);

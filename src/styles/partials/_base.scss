@@ -7,10 +7,10 @@ body {
   font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
   position: relative;
   background:
-    radial-gradient(circle at 18% 16%, rgba(var(--accent-glow), 0.2), transparent 36%),
-    radial-gradient(circle at 78% 12%, rgba(126, 208, 255, 0.18), transparent 32%),
-    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.03), transparent 42%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 18% 16%, rgba(var(--accent-glow), 0.14), transparent 40%),
+    radial-gradient(circle at 78% 12%, rgba(86, 204, 242, 0.12), transparent 38%),
+    radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.02), transparent 45%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
     var(--surface-0);
   color: var(--text-secondary);
   min-height: 100vh;
@@ -26,7 +26,7 @@ body::before {
   height: 100%;
   pointer-events: none;
   z-index: 50;
-  opacity: 0.03;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
   mix-blend-mode: overlay;
 }
@@ -35,7 +35,7 @@ body::after {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(var(--accent-glow), 0.1), transparent 40%);
+  background: radial-gradient(circle at 30% 20%, rgba(var(--accent-glow), 0.08), transparent 45%);
   mix-blend-mode: screen;
   opacity: 0.5;
   pointer-events: none;
@@ -51,9 +51,7 @@ a {
   text-decoration: none;
   transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 
-  &:hover {
-    color: var(--accent-tertiary);
-  }
+  &:hover { color: var(--accent-primary); }
 }
 
 /* Utilities & Helpers */
@@ -94,20 +92,20 @@ a {
 
 .glass-card {
   background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)),
-    radial-gradient(circle at 10% 10%, rgba(var(--accent-glow), 0.08), transparent 45%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 10% 10%, rgba(var(--accent-glow), 0.06), transparent 50%),
     var(--gradient-card);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--radius-md);
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.38);
   position: relative;
   overflow: hidden;
   &::before {
     content: '';
     position: absolute;
     inset: -40% -20%;
-    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.12), transparent 40%);
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1), transparent 45%);
     pointer-events: none;
   }
 }
@@ -115,8 +113,8 @@ a {
 .badge-pill {
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -138,7 +136,7 @@ a {
 .scroll-progress-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  box-shadow: 0 0 20px rgba(var(--accent-glow), 0.3);
+  box-shadow: 0 0 14px rgba(var(--accent-glow), 0.28);
   transform-origin: left;
   transition: width 0.1s ease-out;
 }
@@ -159,7 +157,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.04);
   font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   font-family: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
   color: var(--text-primary);
