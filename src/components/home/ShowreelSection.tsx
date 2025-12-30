@@ -9,12 +9,12 @@ export default function ShowreelSection() {
       <div className="studio-container">
         <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
           <div>
-            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Showreel</span>
+            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Capability evidence</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Interactive builds you can feel
+              Executive-ready delivery, demonstrated
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '640px' }}>
-              Parallax storytelling, sticky timelines, and launch-ready drops—shipped with the same universal system.
+              Portfolio, product, and launch surfaces delivered on a single system with measurable outcomes.
             </p>
           </div>
           <span className="text-muted small text-uppercase letter-spacing-1">Scroll or drag</span>
