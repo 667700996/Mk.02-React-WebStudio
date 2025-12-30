@@ -13,16 +13,16 @@ export default function LatestPosts() {
       <div className="studio-container">
         <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4">
           <div>
-            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Insights</span>
+            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Executive insights</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Latest signals from the studio
+              Strategy, systems, and delivery notes
             </h2>
             <p className="text-muted mb-0">
-              Essays, experiments, and playbooks on building expressive, durable web experiences.
+              Playbooks on governance, performance, and scalable design systems.
             </p>
           </div>
           <Link href="/blog" className="text-decoration-none text-primary fw-semibold">
-            View all posts →
+            View all insights →
           </Link>
         </div>
         <Row className="g-4">

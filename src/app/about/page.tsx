@@ -30,10 +30,10 @@ export default function AboutPage() {
       <div className="studio-container">
         <section className="page-hero">
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">About {siteConfig.name}</span>
-          <h1 className="display-5 fw-bold mt-3">A studio built for elite, adaptable web systems.</h1>
+          <h1 className="display-5 fw-bold mt-3">A studio built for enterprise-grade web systems.</h1>
           <p className="lead mt-3">
-            {siteConfig.name} blends narrative direction, product thinking, and engineering rigor. We build flagship sites
-            that operate as portfolio, product, and launch surfaces with a single system.
+            {siteConfig.name} blends narrative direction, product strategy, and engineering rigor. We build flagship systems
+            that serve executives, product teams, and launch operations from a single foundation.
           </p>
         </section>
 
@@ -59,8 +59,8 @@ export default function AboutPage() {
         <section className="glass-card p-4 p-lg-5 mb-5">
           <h2 className="h3 text-white">How we partner</h2>
           <p className="text-muted mb-4">
-            We embed with teams to clarify the narrative, design the system, and launch fast. You keep the toolkit: component
-            libraries, publishing guide, and instrumentation that make every new release calmer.
+            We embed with teams to clarify the narrative, design the system, and deliver with governance. You keep the toolkit:
+            component libraries, publishing guides, and instrumentation that make every release predictable.
           </p>
           <div className="d-grid gap-4 gap-lg-5">
             {pillars.map((pillar) => (
