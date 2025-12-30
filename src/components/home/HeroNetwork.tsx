@@ -9,7 +9,8 @@ import * as random from 'maath/random/dist/maath-random.esm';
 
 function ParticleNetwork(props: React.ComponentProps<typeof Points>) {
   const ref = useRef<THREE.Points>(null);
-  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.5 }));
+  // Reduced count from 5000 to 3000 for performance
+  const [sphere] = useState(() => random.inSphere(new Float32Array(3000), { radius: 1.5 }));
 
   useFrame((state, delta) => {
     if (ref.current) {
@@ -66,7 +67,12 @@ function ConnectingLines() {
 export default function HeroNetwork() {
   return (
     <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 1] }}>
+      <Canvas 
+        camera={{ position: [0, 0, 1] }}
+        dpr={[1, 2]} // Cap pixel ratio for performance
+        gl={{ antialias: false, powerPreference: "high-performance" }} // Disable AA for particles (not needed)
+        performance={{ min: 0.5 }}
+      >
         <ParticleNetwork />
         <ConnectingLines />
         <Float speed={1.5} rotationIntensity={1} floatIntensity={2}>
