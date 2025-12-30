@@ -45,7 +45,7 @@ export default function ContactPage() {
       <div className="studio-container">
         <section className="page-hero">
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">Start a project</span>
-          <h1 className="display-5 fw-bold mt-3">Tell us about your next release.</h1>
+          <h1 className="display-5 fw-bold mt-3">Executive summary — engagement request.</h1>
           <p className="lead mt-3">
             Share a few details and we will respond within one business day with scope, timeline, and delivery plan.
           </p>

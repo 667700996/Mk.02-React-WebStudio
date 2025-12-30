@@ -18,7 +18,7 @@ export default function BlogPage() {
       <div className="studio-container">
         <section className="page-hero">
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">Insights</span>
-          <h1 className="display-5 fw-bold mt-3">Signals, systems, and execution notes.</h1>
+          <h1 className="display-5 fw-bold mt-3">Executive summary — insights.</h1>
           <p className="lead mt-3">
             Field notes on building premium web systems: performance architecture, motion craft, content ops, and launch governance.
           </p>
