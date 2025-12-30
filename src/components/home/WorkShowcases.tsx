@@ -32,7 +32,7 @@ export default function WorkShowcases() {
             <div className="max-w-2xl">
                 <span className="mono-pill border-white/10 bg-white/5 text-secondary mb-4">Selected engagements</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
-                    Enterprise delivery.
+                    Executive summary — delivery record.
                 </h2>
                 <p className="text-lg text-secondary/80">
                     Systems that align leadership narratives with measurable product outcomes.
