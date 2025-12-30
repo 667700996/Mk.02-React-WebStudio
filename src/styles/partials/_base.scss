@@ -17,6 +17,26 @@ body {
   line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+.display-5 {
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  letter-spacing: -0.02em;
+}
+
+.display-6 {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  letter-spacing: -0.015em;
+}
+
+.lead {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
 body::before {
   content: "";
   position: fixed;
