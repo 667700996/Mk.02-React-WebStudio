@@ -33,13 +33,7 @@ export default function RebootHero() {
   const { scrollY } = useScroll();
   
   // Parallax effects
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 500], [0, -150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
-
-  // Smooth spring physics for background elements
-  const smoothY1 = useSpring(y1, { stiffness: 100, damping: 30 });
-  const smoothY2 = useSpring(y2, { stiffness: 100, damping: 30 });
 
   return (
     <section ref={containerRef} className="reboot-hero position-relative overflow-hidden min-vh-100 d-flex align-items-center">

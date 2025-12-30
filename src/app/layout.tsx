@@ -9,7 +9,6 @@ import { siteConfig } from '@/lib/siteConfig';
 import Analytics from '@/components/Analytics';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 import SmoothScrolling from '@/components/ui/SmoothScrolling';
-import MouseTrailer from '@/components/ui/MouseTrailer';
 import FloatingDock from '@/components/ui/FloatingDock';
 import CommandMenu from '@/components/CommandMenu';
 
