@@ -10,13 +10,12 @@ export default function InnovationStackSection() {
       <div className="studio-container">
         <div className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
           <div>
-            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Tech Stack</span>
+            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Engineering stack</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Motion, performance, and ops—wired like big tech
+              Performance, observability, and governance at scale
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '620px' }}>
-              Scroll-linked reveals, GPU-safe motion, bundle discipline, and observability—delivered as part of the same
-              publishing OS.
+              Measurable motion budgets, RUM instrumentation, and release guardrails baked into every surface.
             </p>
           </div>
           <div className="d-flex flex-wrap gap-2">
