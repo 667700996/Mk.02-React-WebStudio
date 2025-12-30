@@ -17,9 +17,9 @@
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .system-tile:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   border-color: rgba(var(--accent-glow), 0.3);
-  box-shadow: 0 26px 55px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
 }
 
 .progress-shell { width: 100%; height: 8px; background: rgba(var(--accent-glow), 0.08); border-radius: 999px; overflow: hidden; }
@@ -68,7 +68,7 @@
   border: 1px solid rgba(var(--accent-glow), 0.16);
 }
 .showreel-card:hover {
-  transform: translateY(-6px) scale(1.01); border-color: rgba(var(--accent-glow), 0.3); box-shadow: 0 26px 55px rgba(0, 0, 0, 0.35);
+  transform: translateY(-4px); border-color: rgba(var(--accent-glow), 0.28); box-shadow: 0 22px 48px rgba(0, 0, 0, 0.3);
 }
 
 .performance-tile { border: 1px solid rgba(var(--accent-glow), 0.18); }
@@ -85,7 +85,7 @@
   transform-style: preserve-3d; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 .stack-card:hover {
-  transform: translateY(-6px) rotateX(4deg) rotateY(-4deg); border-color: rgba(var(--accent-glow), 0.3); box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px); border-color: rgba(var(--accent-glow), 0.28); box-shadow: 0 26px 60px rgba(0, 0, 0, 0.36);
 }
 
 .faq-card { border: 1px solid var(--border-soft); transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
@@ -149,6 +149,7 @@
 
 .lab-card { border: 1px solid rgba(var(--accent-glow), 0.2); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
 .lab-card:hover { transform: translateY(-6px); border-color: rgba(var(--accent-glow), 0.34); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); }
+.lab-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-glow), 0.28); box-shadow: 0 22px 52px rgba(0, 0, 0, 0.32); }
 .lab-metric {
   padding: 0.75rem 1rem; border-radius: var(--radius-sm); background: linear-gradient(135deg, rgba(var(--accent-glow), 0.14), rgba(255, 255, 255, 0.06));
   border: 1px solid rgba(var(--accent-glow), 0.2); text-align: center;
@@ -191,6 +192,7 @@
 
 .kinetic-card { border: 1px solid rgba(var(--accent-glow), 0.2); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
 .kinetic-card:hover { transform: translateY(-6px); border-color: rgba(var(--accent-glow), 0.32); box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35); }
+.kinetic-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-glow), 0.28); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32); }
 .kinetic-meter { height: 8px; background: rgba(var(--accent-glow), 0.12); border-radius: 999px; overflow: hidden; }
 .kinetic-meter-fill { height: 100%; background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary)); width: 75%; animation: progressPulse 2.5s ease-in-out infinite; }
 
@@ -226,6 +228,7 @@
 
 .motion-card { border: 1px solid rgba(var(--accent-glow), 0.2); transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease; }
 .motion-card:hover { transform: translateY(-5px); border-color: rgba(var(--accent-glow), 0.3); box-shadow: 0 22px 55px rgba(0, 0, 0, 0.35); }
+.motion-card:hover { transform: translateY(-4px); border-color: rgba(var(--accent-glow), 0.28); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32); }
 .chip {
   display: inline-flex; align-items: center; gap: 0.35rem; padding: 0.4rem 0.7rem; border-radius: 999px;
   background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); color: var(--text-primary); font-size: 0.9rem;
