@@ -3,57 +3,89 @@
 import Link from 'next/link';
 import { Container, Row, Col } from 'react-bootstrap';
 import { siteConfig } from '@/lib/siteConfig';
+import { ArrowRight, Github, Twitter, Linkedin } from 'lucide-react';
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="py-5 mt-auto">
-      <Container className="studio-container footer-shell glass-card">
-        <Row className="gy-4">
-          <Col md={5}>
-            <div className="badge-pill bg-opacity-10 bg-primary text-primary mb-3">{siteConfig.shortName}</div>
-            <h5 className="text-light-emphasis mb-3">{siteConfig.tagline}</h5>
-            <p className="mb-0 text-muted">{siteConfig.description}</p>
-          </Col>
-          <Col md={4} sm={6}>
-            <h6 className="text-uppercase text-muted fw-semibold mb-3">Navigate</h6>
-            <ul className="list-unstyled d-flex flex-column gap-2">
-              {siteConfig.navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-decoration-none text-muted">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Col>
-          <Col md={3} sm={6}>
-            <h6 className="text-uppercase text-muted fw-semibold mb-3">Connect</h6>
-            <ul className="list-unstyled d-flex flex-column gap-2">
-              {siteConfig.socials.map((social) => (
-                <li key={social.href}>
-                  <a href={social.href} target="_blank" rel="noreferrer" className="text-decoration-none text-muted">
-                    {social.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </Col>
-        </Row>
-        <Row className="pt-4 mt-4 border-top border-opacity-10">
-          <Col className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
-            <small className="text-muted">© {year} {siteConfig.name}. All rights reserved.</small>
-            <div className="d-flex gap-3">
-              <Link href="/privacy" className="text-decoration-none text-muted small">
-                Privacy
-              </Link>
-              <Link href="/terms" className="text-decoration-none text-muted small">
-                Terms
-              </Link>
+    <footer className="py-8 mt-auto border-t border-white/5 bg-surface-1">
+      <Container className="studio-container">
+        <Row className="gy-5 justify-content-between">
+          <Col lg={4}>
+            <div className="mb-6">
+              <span className="text-xl font-bold tracking-tight text-white">{siteConfig.name}</span>
+              <p className="mt-4 text-secondary max-w-sm leading-relaxed">
+                Building universal design systems for forward-thinking product teams. 
+                We bridge the gap between cinematic storytelling and rigorous engineering.
+              </p>
+            </div>
+            
+            <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:bg-white/10 hover:text-white transition-all">
+                    <Github className="w-4 h-4" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:bg-white/10 hover:text-white transition-all">
+                    <Twitter className="w-4 h-4" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted hover:bg-white/10 hover:text-white transition-all">
+                    <Linkedin className="w-4 h-4" />
+                </a>
             </div>
           </Col>
+          
+          <Col lg={2} sm={6}>
+            <h6 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Product</h6>
+            <ul className="list-unstyled d-flex flex-column gap-3">
+              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Framework</Link></li>
+              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Design Tokens</Link></li>
+              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Motion Kit</Link></li>
+              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Changelog</Link></li>
+            </ul>
+          </Col>
+
+          <Col lg={2} sm={6}>
+            <h6 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Company</h6>
+            <ul className="list-unstyled d-flex flex-column gap-3">
+              <li><Link href="/about" className="text-secondary hover:text-white transition-colors">About</Link></li>
+              <li><Link href="/blog" className="text-secondary hover:text-white transition-colors">Blog</Link></li>
+              <li><Link href="#" className="text-secondary hover:text-white transition-colors">Careers</Link></li>
+              <li><Link href="/contact" className="text-secondary hover:text-white transition-colors">Contact</Link></li>
+            </ul>
+          </Col>
+
+          <Col lg={3}>
+             <h6 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Stay updated</h6>
+             <p className="text-sm text-secondary mb-4">
+                Get the latest on design engineering and system architecture.
+             </p>
+             <form className="relative" onSubmit={(e) => e.preventDefault()}>
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-muted focus:outline-none focus:border-white/20 focus:ring-1 focus:ring-white/20 transition-all"
+                />
+                <button 
+                    type="submit" 
+                    className="absolute right-1 top-1 h-8 w-8 bg-white/10 rounded-md flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+                >
+                    <ArrowRight className="w-4 h-4" />
+                </button>
+             </form>
+          </Col>
         </Row>
+        
+        <div className="pt-8 mt-12 border-t border-white/5 flex flex-col md:flex-row justify-content-between align-items-center gap-4">
+            <small className="text-muted">© {year} {siteConfig.name}. All rights reserved.</small>
+            <div className="flex gap-6">
+              <Link href="/privacy" className="text-xs text-muted hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-xs text-muted hover:text-white transition-colors">
+                Terms of Service
+              </Link>
+            </div>
+        </div>
       </Container>
     </footer>
   );
