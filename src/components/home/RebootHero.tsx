@@ -59,7 +59,7 @@ export default function RebootHero() {
           <motion.div variants={textVariant} className="flex justify-center mb-10">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-md text-xs font-medium text-secondary tracking-widest uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
-              System v2.5.0
+              Enterprise-grade system
             </span>
           </motion.div>
 
@@ -67,10 +67,10 @@ export default function RebootHero() {
           <motion.div variants={textVariant}>
             <h1 className="text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] font-bold tracking-tighter mb-8 text-white leading-[0.95]">
               <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">
-                Architecting
+                Enterprise
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/40 font-light italic font-serif">
-                Digital Gravity.
+                experience systems.
               </span>
             </h1>
           </motion.div>
@@ -78,15 +78,15 @@ export default function RebootHero() {
           {/* Subtitle */}
           <motion.div variants={textVariant}>
             <p className="text-xl md:text-2xl text-secondary mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-              We build universal design systems that bend physics. <br className="hidden md:block" />
-              <span className="text-white/60">From cinematic portfolios to enterprise product layers, all on one OS.</span>
+              Strategy, design, and engineering unified into one flagship system. <br className="hidden md:block" />
+              <span className="text-white/60">Built to scale from executive narratives to product education and launch operations.</span>
             </p>
           </motion.div>
 
           {/* Actions - Magnetic Feel */}
           <motion.div variants={textVariant} className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/contact" className="px-8 py-4 rounded-full bg-white text-surface-0 font-medium text-base hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 group">
-              <span>Deploy System</span>
+              <span>Start engagement</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link href="#showreel" className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white font-medium text-base hover:bg-white/10 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 backdrop-blur-sm">

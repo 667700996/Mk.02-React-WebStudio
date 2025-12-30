@@ -25,9 +25,9 @@ export type SiteConfig = {
 export const siteConfig: SiteConfig = {
   name: 'Commonline Studio',
   shortName: 'Commonline',
-  tagline: 'Iconic, minimal, and engineered to flex for product, portfolio, and launch.',
+  tagline: 'Enterprise-grade, system-first websites for portfolio, product, and launch.',
   description:
-    'Commonline Studio ships universal-grade web systems with cinematic motion, performance guardrails, and launch ops built in—so you can sell, teach, and ship from one flagship.',
+    'Commonline Studio delivers enterprise-grade web systems with rigorous performance, governance, and a unified experience layer for portfolio, product, and launch.',
   url: 'https://commonline.studio',
   keywords: [
     'web studio',
