@@ -34,10 +34,7 @@ export default function RealtimeDashboard() {
         <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-              </span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
               <span className="text-xs font-mono text-emerald-400 uppercase tracking-widest">System Online</span>
             </div>
             <h2 className="text-3xl font-bold text-white tracking-tight">Executive summary — live telemetry</h2>
@@ -86,12 +83,13 @@ export default function RealtimeDashboard() {
                   key={index}
                   initial={{ height: 0 }}
                   animate={{ height: `${value}%` }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                  transition={{ type: 'tween', duration: 0.6, ease: 'easeOut' }}
                   className="w-full bg-accent-primary/20 rounded-t-sm relative group/bar"
                 >
                     <motion.div 
                         className="absolute bottom-0 left-0 w-full bg-accent-primary opacity-60"
                         animate={{ height: '100%' }}
+                        transition={{ type: 'tween', duration: 0.6, ease: 'easeOut' }}
                     />
                 </motion.div>
               ))}
@@ -113,7 +111,7 @@ export default function RealtimeDashboard() {
                     <motion.div 
                         className="h-full bg-purple-500"
                         animate={{ width: `${cpuLoad}%` }}
-                        transition={{ type: 'spring', bounce: 0, duration: 0.8 }}
+                        transition={{ type: 'tween', duration: 0.6, ease: 'easeOut' }}
                     />
                 </div>
             </div>
@@ -131,7 +129,7 @@ export default function RealtimeDashboard() {
                     <motion.div 
                         className="h-full bg-orange-500"
                         animate={{ width: `${memoryUsage}%` }}
-                        transition={{ type: 'spring', bounce: 0, duration: 0.8 }}
+                        transition={{ type: 'tween', duration: 0.6, ease: 'easeOut' }}
                     />
                 </div>
             </div>
@@ -143,7 +141,7 @@ export default function RealtimeDashboard() {
                     <span className="text-sm font-semibold text-white">Vercel Edge</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-emerald-500" />
                     <span className="text-xs text-emerald-400 font-mono">OPERATIONAL</span>
                 </div>
             </div>
