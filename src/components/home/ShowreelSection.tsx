@@ -11,7 +11,7 @@ export default function ShowreelSection() {
           <div>
             <span className="badge-pill bg-opacity-10 bg-primary text-primary">Capability evidence</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Executive-ready delivery, demonstrated
+              Executive summary — delivery evidence
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '640px' }}>
               Portfolio, product, and launch surfaces delivered on a single system with measurable outcomes.
