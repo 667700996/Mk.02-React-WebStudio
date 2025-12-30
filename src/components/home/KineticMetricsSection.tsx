@@ -5,18 +5,18 @@ import ViewportReveal from '../ViewportReveal';
 
 export default function KineticMetricsSection() {
   return (
-    <section className="py-5 py-lg-6 position-relative overflow-hidden">
+    <section className="exec-section position-relative overflow-hidden">
       <div className="studio-container position-relative">
         <div className="floating-orb orb-1" style={{ left: '14%', top: '18%', opacity: 0.22 }} />
         <div className="floating-orb orb-2" style={{ right: '10%', top: '24%', opacity: 0.28 }} />
-        <ViewportReveal className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4">
+        <ViewportReveal className="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4 exec-head">
           <div>
-            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Live metrics</span>
+            <span className="badge-pill bg-opacity-10 bg-primary text-primary">Executive metrics</span>
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
-              Kinetic dashboard of proof
+              Executive summary — performance index
             </h2>
             <p className="text-muted mb-0">
-              Performance, accessibility, and content velocity visualized with motion-safe gauges.
+              Performance, accessibility, and publishing velocity captured in one view.
             </p>
           </div>
           <div className="text-muted small text-uppercase letter-spacing-1">Always-on</div>

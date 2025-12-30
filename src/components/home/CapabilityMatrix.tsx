@@ -68,9 +68,9 @@ export default function CapabilityMatrix() {
   };
 
   return (
-    <section className="py-32 bg-surface-0 relative overflow-hidden" id="capabilities">
+    <section className="exec-section bg-surface-0 relative overflow-hidden" id="capabilities">
         <div className="studio-container relative z-10">
-            <div className="mb-24 md:flex md:items-end md:justify-between">
+            <div className="mb-24 md:flex md:items-end md:justify-between exec-head">
                 <div className="max-w-2xl">
                     <span className="text-xs font-bold text-accent-primary tracking-[0.2em] uppercase mb-6 block">
                         Capabilities
