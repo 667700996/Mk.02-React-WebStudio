@@ -15,7 +15,7 @@ export default function MotionChoreoSection() {
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
               Executive summary — motion governance
             </h2>
-            <p className="text-muted mb-0">Every motion pattern is orchestrated with GPU-friendly transforms and reduced-motion fallbacks.</p>
+            <p className="text-muted mb-0">Every motion pattern is governed by GPU-safe transforms and reduced-motion policy.</p>
           </div>
           <div className="text-muted small text-uppercase letter-spacing-1">Cinematic + safe</div>
         </ViewportReveal>

@@ -39,7 +39,7 @@ export default function RealtimeDashboard() {
             </div>
             <h2 className="text-3xl font-bold text-white tracking-tight">Executive summary — live telemetry</h2>
             <p className="text-white/60 mt-2 max-w-lg">
-              Continuous observability across edge nodes, active sessions, and global latency.
+              Observability across edge nodes, active sessions, and global latency with operational thresholds.
             </p>
           </div>
           <div className="flex gap-4">

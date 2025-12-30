@@ -54,7 +54,7 @@ export default function ContactPage() {
         <div className="row g-4">
           <div className="col-lg-5">
             <div className="glass-card p-4 p-lg-5 h-100">
-              <h2 className="h4 text-white mb-3">What you can expect</h2>
+              <h2 className="h4 text-white mb-3">Engagement summary</h2>
               <ul className="text-muted d-grid gap-2 mb-4">
                 <li>Discovery call and narrative alignment within 72 hours.</li>
                 <li>System architecture, governance plan, and timeline in week one.</li>

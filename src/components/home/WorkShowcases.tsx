@@ -24,6 +24,13 @@ const showcases = [
   },
 ];
 
+const kpis = [
+  { label: 'Avg. LCP', value: '0.9s' },
+  { label: 'Activation lift', value: '+36%' },
+  { label: 'Press to pipeline', value: '4 weeks' },
+  { label: 'Reuse rate', value: '120+ modules' },
+];
+
 export default function WorkShowcases() {
   return (
     <section className="exec-section bg-surface-0 border-t border-white/5" id="case-studies">
@@ -35,13 +42,22 @@ export default function WorkShowcases() {
                     Executive summary — delivery record.
                 </h2>
                 <p className="text-lg text-secondary/80">
-                    Systems that align leadership narratives with measurable product outcomes.
+                    Systems that align leadership narratives with measurable product outcomes and governance.
                 </p>
             </div>
             <button className="group flex items-center gap-2 text-white font-medium hover:text-accent-primary transition-colors">
                 <span>View case library</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
+        </div>
+
+        <div className="exec-summary-grid mb-10">
+          {kpis.map((kpi) => (
+            <div key={kpi.label} className="exec-summary-card">
+              <div className="exec-summary-label">{kpi.label}</div>
+              <div className="exec-summary-value">{kpi.value}</div>
+            </div>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

@@ -13,7 +13,7 @@ export default function AnimationGallerySection() {
             <h2 className="display-6 fw-bold text-white mt-3" style={{ fontFamily: 'var(--font-display)' }}>
               Executive summary — motion vocabulary
             </h2>
-            <p className="text-muted mb-0">Reusable animation motifs tuned for performance budgets and accessibility.</p>
+            <p className="text-muted mb-0">Reusable motion motifs aligned to performance budgets and accessibility policy.</p>
           </div>
           <div className="text-muted small text-uppercase letter-spacing-1">GPU-friendly</div>
         </ViewportReveal>

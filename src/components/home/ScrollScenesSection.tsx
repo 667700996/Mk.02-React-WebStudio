@@ -43,7 +43,7 @@ export default function ScrollScenesSection() {
               Executive summary — build choreography
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '620px' }}>
-              Each phase reacts as you scroll—mirroring how the system responds to launches, updates, and experiments.
+              Each phase reflects the operating model for launches, updates, and controlled experiments.
             </p>
           </div>
           <span className="text-muted small text-uppercase letter-spacing-1">Scroll-linked animation</span>

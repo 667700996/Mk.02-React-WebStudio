@@ -18,7 +18,7 @@ export default function LatestPosts() {
               Executive summary — insights
             </h2>
             <p className="text-muted mb-0">
-              Playbooks on governance, performance, and scalable design systems.
+              Playbooks on governance, performance, and enterprise system delivery.
             </p>
           </div>
           <Link href="/blog" className="text-decoration-none text-primary fw-semibold">

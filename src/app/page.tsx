@@ -3,6 +3,7 @@ import RebootHero from '@/components/home/RebootHero';
 
 const SignalMarquee = dynamic(() => import('@/components/home/SignalMarquee'));
 const LogosRibbon = dynamic(() => import('@/components/home/LogosRibbon'));
+const ExecutiveSummarySection = dynamic(() => import('@/components/home/ExecutiveSummarySection'));
 const KineticMetricsSection = dynamic(() => import('@/components/home/KineticMetricsSection'));
 const ShowreelSection = dynamic(() => import('@/components/home/ShowreelSection'));
 const AnimationGallerySection = dynamic(() => import('@/components/home/AnimationGallerySection'));
@@ -24,6 +25,7 @@ export default function Home() {
       <RebootHero />
       <SignalMarquee />
       <LogosRibbon />
+      <ExecutiveSummarySection />
       <KineticMetricsSection />
       <ShowreelSection />
       <AnimationGallerySection />

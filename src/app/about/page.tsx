@@ -32,7 +32,7 @@ export default function AboutPage() {
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">About {siteConfig.name}</span>
           <h1 className="display-5 fw-bold mt-3">Executive summary — about the studio.</h1>
           <p className="lead mt-3">
-            {siteConfig.name} blends narrative direction, product strategy, and engineering rigor. We build flagship systems
+            {siteConfig.name} blends narrative direction, product strategy, and engineering rigor. We deliver flagship systems
             that serve executives, product teams, and launch operations from a single foundation.
           </p>
         </section>
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <h2 className="h3 text-white">How we partner</h2>
           <p className="text-muted mb-4">
             We embed with teams to clarify the narrative, design the system, and deliver with governance. You keep the toolkit:
-            component libraries, publishing guides, and instrumentation that make every release predictable.
+            component libraries, publishing guides, and instrumentation that make delivery predictable.
           </p>
           <div className="d-grid gap-4 gap-lg-5">
             {pillars.map((pillar) => (

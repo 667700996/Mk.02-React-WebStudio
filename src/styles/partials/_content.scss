@@ -11,6 +11,45 @@
   font-family: var(--font-display);
 }
 
+.exec-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.exec-summary-card {
+  border: 1px solid rgba(var(--accent-glow), 0.2);
+  border-radius: var(--radius-md);
+  background: linear-gradient(160deg, rgba(var(--accent-glow), 0.12), rgba(255, 255, 255, 0.02));
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.4rem;
+}
+.exec-summary-label {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+.exec-summary-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.exec-summary-signals {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+.exec-summary-signal {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
 .signal-marquee { padding-block: 1rem; overflow: hidden; }
 .signal-track {
   display: inline-flex; gap: 1rem; animation: marquee 26s linear infinite; min-width: max-content; align-items: center; white-space: nowrap;

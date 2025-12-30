@@ -15,7 +15,7 @@ export default function InnovationStackSection() {
               Executive summary — engineering governance
             </h2>
             <p className="text-muted mb-0" style={{ maxWidth: '620px' }}>
-              Measurable motion budgets, RUM instrumentation, and release guardrails baked into every surface.
+              Motion budgets, RUM instrumentation, and release guardrails baked into every surface.
             </p>
           </div>
           <div className="d-flex flex-wrap gap-2">

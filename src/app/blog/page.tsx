@@ -20,7 +20,7 @@ export default function BlogPage() {
           <span className="badge-pill bg-opacity-10 bg-primary text-primary">Insights</span>
           <h1 className="display-5 fw-bold mt-3">Executive summary — insights.</h1>
           <p className="lead mt-3">
-            Field notes on building premium web systems: performance architecture, motion craft, content ops, and launch governance.
+            Field notes on enterprise web systems: performance architecture, motion policy, content operations, and launch governance.
           </p>
         </section>
 

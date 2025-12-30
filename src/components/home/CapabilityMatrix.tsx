@@ -83,7 +83,7 @@ export default function CapabilityMatrix() {
                     </h2>
                 </div>
                 <p className="mt-8 md:mt-0 text-lg text-secondary leading-relaxed max-w-sm text-right">
-                    We bridge the gap between creative vision and rigorous technical execution.
+                    We bridge leadership objectives with rigorous technical execution.
                 </p>
             </div>
 
