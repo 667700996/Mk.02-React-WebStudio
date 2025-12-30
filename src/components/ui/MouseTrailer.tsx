@@ -1,26 +1,44 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 export default function MouseTrailer() {
   const [isHovering, setIsHovering] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
+  // Raw mouse coordinates
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
 
-  const springConfig = { damping: 25, stiffness: 700 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
+  // Smooth springs for the trailer
+  const springConfig = { damping: 20, stiffness: 300, mass: 0.5 };
+  const trailerX = useSpring(mouseX, springConfig);
+  const trailerY = useSpring(mouseY, springConfig);
+
+  // Slight rotation based on velocity (optional "fluid" feel)
+  // We can't easily get velocity from useMotionValue directly without a custom hook, 
+  // so we'll keep it simple but physics-based for now.
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
     };
 
+    const handleMouseDown = () => setIsActive(true);
+    const handleMouseUp = () => setIsActive(false);
+
     const handleHoverStart = (e: MouseEvent) => {
-      if ((e.target as HTMLElement).tagName === 'A' || (e.target as HTMLElement).tagName === 'BUTTON' || (e.target as HTMLElement).closest('a') || (e.target as HTMLElement).closest('button')) {
+      const target = e.target as HTMLElement;
+      // Check for interactive elements
+      if (
+        target.tagName === 'A' || 
+        target.tagName === 'BUTTON' || 
+        target.closest('a') || 
+        target.closest('button') ||
+        target.classList.contains('interactive')
+      ) {
         setIsHovering(true);
       } else {
         setIsHovering(false);
@@ -28,34 +46,49 @@ export default function MouseTrailer() {
     };
 
     window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousedown', handleMouseDown);
+    window.addEventListener('mouseup', handleMouseUp);
     window.addEventListener('mouseover', handleHoverStart);
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('mousedown', handleMouseDown);
+      window.removeEventListener('mouseup', handleMouseUp);
       window.removeEventListener('mouseover', handleHoverStart);
     };
-  }, [cursorX, cursorY]);
+  }, [mouseX, mouseY]);
 
   return (
     <>
-      {/* Main Cursor Dot */}
+      {/* Main Cursor (Tiny Dot) - follows instantly */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-white/20 rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 bg-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
         style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          scale: isHovering ? 2.5 : 1,
-          backgroundColor: isHovering ? 'rgba(255, 255, 255, 0.1)' : 'transparent',
+          x: mouseX,
+          y: mouseY,
+          translateX: '-50%',
+          translateY: '-50%',
         }}
       />
-      {/* Trailing Dot */}
+
+      {/* Fluid Trailer - follows with physics */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-accent-primary rounded-full pointer-events-none z-[9999]"
+        className="fixed top-0 left-0 border border-white/30 rounded-full pointer-events-none z-[9999] backdrop-invert backdrop-blur-[1px]"
         style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: 12,
-          translateY: 12,
+          x: trailerX,
+          y: trailerY,
+          translateX: '-50%',
+          translateY: '-50%',
+          width: isHovering ? 64 : 24,
+          height: isHovering ? 64 : 24,
+          backgroundColor: isHovering ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
+          borderWidth: isHovering ? '0px' : '1px',
+          scale: isActive ? 0.8 : 1,
+        }}
+        transition={{
+          width: { duration: 0.2 },
+          height: { duration: 0.2 },
+          backgroundColor: { duration: 0.2 }
         }}
       />
     </>
