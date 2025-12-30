@@ -2,10 +2,16 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { motion, useScroll, useTransform, useSpring, Variants } from 'framer-motion';
 import { ArrowRight, Play, CheckCircle2, Box } from 'lucide-react';
-import HeroNetwork from './HeroNetwork';
 import HyperText from '../ui/HyperText';
+
+// Lazy load heavy 3D component
+const HeroNetwork = dynamic(() => import('./HeroNetwork'), { 
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-transparent" /> 
+});
 
 const textVariant: Variants = {
   hidden: { opacity: 0, y: 50 },

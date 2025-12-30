@@ -16,11 +16,12 @@ export default function MouseTrailer() {
   const trailerX = useSpring(mouseX, springConfig);
   const trailerY = useSpring(mouseY, springConfig);
 
-  // Slight rotation based on velocity (optional "fluid" feel)
-  // We can't easily get velocity from useMotionValue directly without a custom hook, 
-  // so we'll keep it simple but physics-based for now.
-
   useEffect(() => {
+    // Optimization: Do not render custom cursor on touch devices
+    if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+      return;
+    }
+
     const moveCursor = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -57,6 +58,11 @@ export default function MouseTrailer() {
       window.removeEventListener('mouseover', handleHoverStart);
     };
   }, [mouseX, mouseY]);
+
+  // Hide on mobile (CSS logic handles pointer-events, but this saves rendering)
+  if (typeof window !== 'undefined' && typeof window.matchMedia === 'function' && window.matchMedia('(pointer: coarse)').matches) {
+    return null;
+  }
 
   return (
     <>
