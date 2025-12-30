@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, useScroll, useTransform, useSpring, Variants } from 'framer-motion';
 import { ArrowRight, Play, CheckCircle2, Box } from 'lucide-react';
 import HeroNetwork from './HeroNetwork';
+import HyperText from '../ui/HyperText';
 
 const textVariant: Variants = {
   hidden: { opacity: 0, y: 50 },
@@ -77,10 +78,10 @@ export default function RebootHero() {
             <motion.div variants={textVariant} className="hero-copy">
               <h1 className="display-1 fw-bold tracking-tighter mb-4">
                 <span className="d-block bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">
-                  Architecting
+                  <HyperText text="Architecting" />
                 </span>
                 <span className="d-block text-gradient-primary">
-                  Digital Gravity.
+                  <HyperText text="Digital Gravity." />
                 </span>
               </h1>
               <p className="lead text-secondary mb-5 max-w-2xl">
