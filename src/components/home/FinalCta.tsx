@@ -5,7 +5,7 @@ import { siteConfig } from '@/lib/siteConfig';
 
 export default function FinalCta() {
   return (
-    <section className="final-cta">
+    <section className="final-cta exec-section">
       <div className="studio-container">
         <div className="final-shell glass-card">
           <div>
