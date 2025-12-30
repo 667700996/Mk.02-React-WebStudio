@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getSortedPostsData } from '@/lib/posts';
 import { formatDate } from '@/lib/format';
+
+export const metadata: Metadata = {
+  title: 'Insights',
+  description: 'Thought leadership on design engineering, performance systems, and launch operations.',
+};
 
 export default function BlogPage() {
   const posts = getSortedPostsData();

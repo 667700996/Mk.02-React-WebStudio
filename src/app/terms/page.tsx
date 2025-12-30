@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/siteConfig';
+
+export const metadata: Metadata = {
+  title: 'Terms',
+  description: `Terms of service for ${siteConfig.name}.`,
+};
 
 export default function TermsPage() {
   return (

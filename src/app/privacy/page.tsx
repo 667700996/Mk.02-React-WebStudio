@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import { siteConfig } from '@/lib/siteConfig';
+
+export const metadata: Metadata = {
+  title: 'Privacy',
+  description: `Privacy policy for ${siteConfig.name}.`,
+};
 
 export default function PrivacyPage() {
   return (
