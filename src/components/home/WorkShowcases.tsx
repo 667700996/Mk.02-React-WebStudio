@@ -26,9 +26,9 @@ const showcases = [
 
 export default function WorkShowcases() {
   return (
-    <section className="py-24 bg-surface-0 border-t border-white/5" id="case-studies">
+    <section className="exec-section bg-surface-0 border-t border-white/5" id="case-studies">
       <div className="studio-container">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 exec-head">
             <div className="max-w-2xl">
                 <span className="mono-pill border-white/10 bg-white/5 text-secondary mb-4">Selected engagements</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">
