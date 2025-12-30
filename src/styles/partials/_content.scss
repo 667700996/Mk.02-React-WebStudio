@@ -112,12 +112,18 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+  align-items: start;
 }
 .stat-card {
   border: 1px solid rgba(var(--accent-glow), 0.2);
   background: linear-gradient(160deg, rgba(var(--accent-glow), 0.12), rgba(255, 255, 255, 0.02));
   border-radius: var(--radius-md);
   padding: 1.25rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.stat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
 }
 .stat-card .stat-label {
   text-transform: uppercase;
@@ -135,6 +141,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.25rem;
+  align-items: start;
 }
 .post-card {
   border: 1px solid rgba(var(--accent-glow), 0.18);
@@ -170,6 +177,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (min-width: 992px) {
+  .stat-card:nth-child(2) { transform: translateY(10px); }
+  .stat-card:nth-child(4) { transform: translateY(-8px); }
+  .post-card:nth-child(2) { transform: translateY(10px); }
+  .post-card:nth-child(3) { transform: translateY(-6px); }
 }
 
 .studio-form .form-label {
