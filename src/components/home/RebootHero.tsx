@@ -37,36 +37,36 @@ export default function RebootHero() {
 
   return (
     <section ref={containerRef} className="reboot-hero position-relative overflow-hidden min-vh-100 d-flex align-items-center bg-surface-0">
-      {/* Cinematic Aurora Background */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-accent-primary/10 blur-[120px] mix-blend-screen animate-pulse-slow" />
-         <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-accent-secondary/10 blur-[120px] mix-blend-screen animate-pulse-slow" style={{ animationDelay: '2s' }} />
-         <div className="absolute top-[20%] right-[20%] w-[30vw] h-[30vw] rounded-full bg-purple-500/10 blur-[100px] mix-blend-screen animate-pulse-slow" style={{ animationDelay: '4s' }} />
+      {/* Cinematic Aurora Background - Layered & Moving */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden bg-surface-0">
+         <div className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full bg-accent-primary/5 blur-[120px] mix-blend-screen animate-pulse-slow" />
+         <div className="absolute bottom-[-20%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-accent-secondary/5 blur-[140px] mix-blend-screen animate-pulse-slow" style={{ animationDelay: '4s' }} />
+         <div className="absolute top-[40%] left-[40%] w-[40vw] h-[40vw] rounded-full bg-purple-500/5 blur-[100px] mix-blend-overlay animate-pulse-slow" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="studio-container position-relative z-10">
+      <div className="studio-container position-relative z-10 h-full flex flex-col justify-center">
         <motion.div 
-          className="hero-content max-w-4xl mx-auto text-center"
+          className="hero-content max-w-5xl mx-auto text-center mt-20"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
           style={{ opacity, y }}
         >
           {/* Badge */}
-          <motion.div variants={textVariant} className="flex justify-center mb-8">
-            <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-xs font-medium text-secondary">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary shadow-[0_0_8px_rgba(126,242,201,0.6)]" />
+          <motion.div variants={textVariant} className="flex justify-center mb-10">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/5 bg-white/[0.02] backdrop-blur-md text-xs font-medium text-secondary tracking-widest uppercase">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
               System v2.5.0
             </span>
           </motion.div>
 
-          {/* Main Title */}
+          {/* Main Title - Massive & Tight */}
           <motion.div variants={textVariant}>
-            <h1 className="display-1 font-bold tracking-tighter mb-6 text-white leading-[1.1]">
-              <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 pb-2">
+            <h1 className="text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] font-bold tracking-tighter mb-8 text-white leading-[0.95]">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50">
                 Architecting
               </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-white to-accent-secondary">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/40 font-light italic font-serif">
                 Digital Gravity.
               </span>
             </h1>
@@ -74,21 +74,21 @@ export default function RebootHero() {
 
           {/* Subtitle */}
           <motion.div variants={textVariant}>
-            <p className="text-xl text-secondary mb-10 max-w-2xl mx-auto leading-relaxed font-light">
-              We build universal design systems that bend physics. 
-              <span className="text-white/80 block mt-1">From immersive portfolios to enterprise product layers.</span>
+            <p className="text-xl md:text-2xl text-secondary mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+              We build universal design systems that bend physics. <br className="hidden md:block" />
+              <span className="text-white/60">From immersive portfolios to enterprise product layers.</span>
             </p>
           </motion.div>
 
-          {/* Actions */}
-          <motion.div variants={textVariant} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 rounded-full bg-white text-surface-0 font-semibold text-sm hover:bg-gray-100 transition-colors flex items-center gap-2 group">
+          {/* Actions - Magnetic Feel */}
+          <motion.div variants={textVariant} className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link href="/contact" className="px-8 py-4 rounded-full bg-white text-surface-0 font-medium text-base hover:bg-gray-200 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 group">
               <span>Deploy System</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link href="#showcase" className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white font-semibold text-sm hover:bg-white/10 transition-colors flex items-center gap-2 backdrop-blur-sm">
+            <Link href="#showcase" className="px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white font-medium text-base hover:bg-white/10 transition-all hover:scale-105 active:scale-95 flex items-center gap-2 backdrop-blur-sm">
               <Play className="w-4 h-4 fill-current" />
-              <span>Watch Showreel</span>
+              <span>Showreel</span>
             </Link>
           </motion.div>
         </motion.div>
