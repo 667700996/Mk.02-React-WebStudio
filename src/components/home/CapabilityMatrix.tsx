@@ -43,26 +43,30 @@ const gridItems = [
 
 function CleanCard({ item }: { item: typeof gridItems[0] }) {
   return (
-    <div className="group relative p-6 transition-all duration-300 hover:bg-white/[0.02] rounded-2xl">
-      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 text-secondary group-hover:text-accent-primary group-hover:bg-accent-primary/10 transition-colors">
-          {item.icon}
-      </div>
+    <div className="group relative p-8 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-500 hover:border-white/10 hover:bg-white/[0.04]">
+      {/* Subtle Inner Glow */}
+      <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
       
-      <h3 className="mb-3 text-lg font-medium text-white">
-          {item.title}
-      </h3>
-      <p className="mb-6 text-sm text-secondary/80 leading-relaxed">
-          {item.description}
-      </p>
+      <div className="relative z-10">
+        <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-surface-0 border border-white/10 text-secondary shadow-lg group-hover:scale-110 group-hover:border-white/20 group-hover:text-white transition-all duration-300">
+            {item.icon}
+        </div>
+        
+        <h3 className="mb-3 text-lg font-semibold text-white tracking-tight">
+            {item.title}
+        </h3>
+        <p className="mb-8 text-sm text-secondary leading-relaxed opacity-80">
+            {item.description}
+        </p>
 
-      <ul className="space-y-2">
-          {item.stats.map((stat, i) => (
-              <li key={i} className="flex items-center text-xs text-muted group-hover:text-secondary transition-colors">
-                  <span className="w-1 h-1 rounded-full bg-white/20 mr-2 group-hover:bg-accent-primary/50" />
-                  {stat}
-              </li>
-          ))}
-      </ul>
+        <ul className="flex flex-wrap gap-2">
+            {item.stats.map((stat, i) => (
+                <li key={i} className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-[10px] font-medium text-muted uppercase tracking-wider group-hover:border-white/10 transition-colors">
+                    {stat}
+                </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
