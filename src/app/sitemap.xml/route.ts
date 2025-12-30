@@ -1,6 +1,5 @@
 import { getSortedPostsData } from '@/lib/posts';
-
-const URL = 'https://your-domain.com'; // Replace with your actual domain
+import { siteConfig } from '@/lib/siteConfig';
 
 export async function GET() {
   const posts = getSortedPostsData();
@@ -9,6 +8,8 @@ export async function GET() {
     { url: '/about', priority: 0.8 },
     { url: '/blog', priority: 0.8 },
     { url: '/contact', priority: 0.8 },
+    { url: '/privacy', priority: 0.3 },
+    { url: '/terms', priority: 0.3 },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -17,7 +18,7 @@ export async function GET() {
     .map(({ url, priority }) => {
       return `
         <url>
-          <loc>${URL}${url}</loc>
+          <loc>${siteConfig.url}${url}</loc>
           <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
           <priority>${priority}</priority>
         </url>
@@ -28,7 +29,7 @@ export async function GET() {
     .map(({ id, date }) => {
       return `
         <url>
-          <loc>${URL}/blog/${id}</loc>
+          <loc>${siteConfig.url}/blog/${id}</loc>
           <lastmod>${date}</lastmod>
           <priority>0.6</priority>
         </url>
