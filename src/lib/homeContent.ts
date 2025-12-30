@@ -183,7 +183,7 @@ export const deepSystems = [
   {
     title: 'Motion Lab',
     tag: 'Animation',
-    description: 'GPU-friendly micro-interactions, scroll-linked reveals, and orchestration rules with performance gates.',
+    description: 'GPU-friendly micro-interactions, scroll-linked reveals, and real-time 3D (R3F/WebGL) under frame budgets.',
     metric: 'Frame budget: 12ms',
   },
   {
@@ -211,6 +211,8 @@ export const performanceSignals = [
   { label: 'CLS', value: '0.01' },
   { label: 'Bundle discipline', value: '<160kb route' },
   { label: 'Edge-ready', value: 'CDN + image opts' },
+  { label: 'RSC streaming', value: 'enabled' },
+  { label: '3D runtime', value: 'R3F/WebGL' },
 ];
 
 export const showreel = [
@@ -219,7 +221,7 @@ export const showreel = [
     type: 'Interactive Case',
     description: 'Layered parallax hero with scroll-synced data loops and inline media crops.',
     metric: '4.6x time on page',
-    tech: ['Next.js', 'Edge Images', 'Shiki embeds'],
+    tech: ['Next.js', 'Edge Images', 'R3F/WebGL', 'Shiki embeds'],
   },
   {
     title: 'Product Prism',
@@ -260,6 +262,7 @@ export const engineeringPillars = [
   'MDX + CMS publishing with OG/SEO automation and social crops',
   'Instrumentation baked in: analytics dictionary, feature flags, and QA hooks',
   'Automated accessibility + visual regression sweeps per release',
+  'RSC streaming and edge functions for fast, personalized surfaces',
 ];
 
 export const architectureLayers = [
@@ -554,4 +557,3 @@ export const kineticTimeline = [
   { label: 'QA coverage', value: 94, caption: 'Accessibility + visual regression' },
   { label: 'Experimentation', value: 96, caption: 'Flags + dashboards ready' },
 ];
-
