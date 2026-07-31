@@ -1,186 +1,126 @@
 'use client';
 
-import { useState } from 'react';
-import { Form, Alert } from 'react-bootstrap';
+import { FormEvent, useState } from 'react';
+import { ArrowUpRight, Copy, Check } from 'lucide-react';
+
+const email = 'hello@commonline.studio';
 
 export default function ContactPage() {
+  const [copied, setCopied] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    budget: '',
-    timeline: '',
-    services: '',
+    reason: 'Opportunity',
     message: '',
   });
-  const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+  const copyEmail = async () => {
+    await navigator.clipboard.writeText(email);
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1800);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmissionStatus(null);
-
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      setSubmissionStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        budget: '',
-        timeline: '',
-        services: '',
-        message: '',
-      });
-    } else {
-      setSubmissionStatus('error');
-    }
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const subject = encodeURIComponent(`${formData.reason} — ${formData.name}${formData.company ? ` / ${formData.company}` : ''}`);
+    const body = encodeURIComponent(
+      `Hi Commonline,\n\n${formData.message}\n\n—\n${formData.name}\n${formData.email}${formData.company ? `\n${formData.company}` : ''}`,
+    );
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
   };
 
   return (
-    <main className="py-5">
-      <div className="studio-container">
-        <section className="page-hero">
-          <span className="badge-pill bg-opacity-10 bg-primary text-primary">Start a project</span>
-          <h1 className="display-5 fw-bold mt-3">Executive summary — engagement request.</h1>
-          <p className="lead mt-3">
-            Share a few details and we will respond within one business day with scope, timeline, and delivery plan.
-          </p>
-        </section>
-
-        <div className="row g-4">
-          <div className="col-lg-5">
-            <div className="glass-card p-4 p-lg-5 h-100">
-              <h2 className="h4 text-white mb-3">Engagement summary</h2>
-              <ul className="text-muted d-grid gap-2 mb-4">
-                <li>Discovery call and narrative alignment within 72 hours.</li>
-                <li>System architecture, governance plan, and timeline in week one.</li>
-                <li>Launch-ready build with performance and accessibility guardrails.</li>
-              </ul>
-              <div className="d-grid gap-3">
-                <div>
-                  <div className="text-uppercase small letter-spacing-1 text-muted">Email</div>
-                  <a href="mailto:hello@commonline.studio" className="text-white text-decoration-none">
-                    hello@commonline.studio
-                  </a>
-                </div>
-                <div>
-                  <div className="text-uppercase small letter-spacing-1 text-muted">Typical timeline</div>
-                  <div className="text-white">4-6 weeks for a full flagship system</div>
-                </div>
-                <div>
-                  <div className="text-uppercase small letter-spacing-1 text-muted">Availability</div>
-                  <div className="text-white">Next intake: two to four weeks</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-7">
-            <div className="glass-card p-4 p-lg-5">
-              <Form onSubmit={handleSubmit} className="studio-form">
-                <div className="row g-3">
-                  <div className="col-md-6">
-                    <Form.Group controlId="formName">
-                      <Form.Label>Name</Form.Label>
-                      <Form.Control type="text" name="name" value={formData.name} onChange={handleChange} autoComplete="name" required />
-                    </Form.Group>
-                  </div>
-                  <div className="col-md-6">
-                    <Form.Group controlId="formEmail">
-                      <Form.Label>Email</Form.Label>
-                      <Form.Control type="email" name="email" value={formData.email} onChange={handleChange} autoComplete="email" required />
-                    </Form.Group>
-                  </div>
-                  <div className="col-md-6">
-                    <Form.Group controlId="formCompany">
-                      <Form.Label>Company</Form.Label>
-                      <Form.Control type="text" name="company" value={formData.company} onChange={handleChange} autoComplete="organization" />
-                    </Form.Group>
-                  </div>
-                  <div className="col-md-6">
-                    <Form.Group controlId="formServices">
-                      <Form.Label>Primary need</Form.Label>
-                      <Form.Select name="services" value={formData.services} onChange={handleChange}>
-                        <option value="">Select one</option>
-                        <option value="flagship">Universal flagship</option>
-                        <option value="portfolio">Portfolio system</option>
-                        <option value="product">Product + docs layer</option>
-                        <option value="launch">Launch + campaign drops</option>
-                      </Form.Select>
-                    </Form.Group>
-                  </div>
-                  <div className="col-md-6">
-                    <Form.Group controlId="formBudget">
-                      <Form.Label>Estimated budget</Form.Label>
-                      <Form.Select name="budget" value={formData.budget} onChange={handleChange}>
-                        <option value="">Select range</option>
-                        <option value="20-40k">$20-40k</option>
-                        <option value="40-80k">$40-80k</option>
-                        <option value="80-150k">$80-150k</option>
-                        <option value="150k+">$150k+</option>
-                      </Form.Select>
-                    </Form.Group>
-                  </div>
-                  <div className="col-md-6">
-                    <Form.Group controlId="formTimeline">
-                      <Form.Label>Desired timeline</Form.Label>
-                      <Form.Select name="timeline" value={formData.timeline} onChange={handleChange}>
-                        <option value="">Select timeline</option>
-                        <option value="asap">ASAP</option>
-                        <option value="4-6w">4-6 weeks</option>
-                        <option value="6-10w">6-10 weeks</option>
-                        <option value="10w+">10+ weeks</option>
-                      </Form.Select>
-                    </Form.Group>
-                  </div>
-                  <div className="col-12">
-                    <Form.Group controlId="formMessage">
-                      <Form.Label>Project goals</Form.Label>
-                      <Form.Control
-                        as="textarea"
-                        name="message"
-                        rows={5}
-                        value={formData.message}
-                        onChange={handleChange}
-                        placeholder="What are you hoping to build or transform?"
-                        required
-                      />
-                      <Form.Text>Share goals, constraints, and any deadlines.</Form.Text>
-                    </Form.Group>
-                  </div>
-                </div>
-
-                <button type="submit" className="btn btn-primary btn-lg fw-semibold mt-4">
-                  Send message
-                </button>
-              </Form>
-
-              {submissionStatus === 'success' && (
-                <Alert variant="success" className="mt-4" role="status" aria-live="polite">
-                  Your message has been sent successfully. We will be in touch shortly.
-                </Alert>
-              )}
-              {submissionStatus === 'error' && (
-                <Alert variant="danger" className="mt-4" role="alert" aria-live="assertive">
-                  Something went wrong. Please try again later or email us directly.
-                </Alert>
-              )}
-            </div>
-          </div>
+    <main className="cx-contact-page">
+      <section className="cx-contact-page__hero">
+        <div className="cx-contact-page__orbit" aria-hidden="true"><span /><i /></div>
+        <p className="cx-kicker"><span /> Available for select opportunities</p>
+        <h1>LET’S MAKE<br /><span>THE NEXT</span><br />THING MATTER.</h1>
+        <div className="cx-contact-page__email">
+          <a href={`mailto:${email}`}>{email}</a>
+          <button type="button" onClick={copyEmail} aria-label="Copy email address">
+            {copied ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}
+            <span aria-live="polite">{copied ? 'Copied' : 'Copy'}</span>
+          </button>
         </div>
-      </div>
+      </section>
+
+      <section className="cx-contact-page__form-section">
+        <div>
+          <div className="cx-section-index"><span>01 / MESSAGE</span><span>REPLY WITHIN 1–2 DAYS</span></div>
+          <h2>Tell me what<br />you’re building.</h2>
+          <p>Roles, ambitious products, creative collaborations, or the problem nobody has quite solved yet.</p>
+        </div>
+
+        <form className="cx-contact-form" onSubmit={handleSubmit}>
+          <div className="cx-field">
+            <label htmlFor="contact-name">Your name</label>
+            <input
+              id="contact-name"
+              name="name"
+              autoComplete="name"
+              value={formData.name}
+              onChange={(event) => setFormData({ ...formData, name: event.target.value })}
+              placeholder="Name"
+              required
+            />
+          </div>
+          <div className="cx-field">
+            <label htmlFor="contact-email">Email address</label>
+            <input
+              id="contact-email"
+              type="email"
+              name="email"
+              autoComplete="email"
+              value={formData.email}
+              onChange={(event) => setFormData({ ...formData, email: event.target.value })}
+              placeholder="you@company.com"
+              required
+            />
+          </div>
+          <div className="cx-field">
+            <label htmlFor="contact-company">Company <span>Optional</span></label>
+            <input
+              id="contact-company"
+              name="company"
+              autoComplete="organization"
+              value={formData.company}
+              onChange={(event) => setFormData({ ...formData, company: event.target.value })}
+              placeholder="Company or team"
+            />
+          </div>
+          <div className="cx-field">
+            <label htmlFor="contact-reason">I’m reaching out about</label>
+            <select
+              id="contact-reason"
+              name="reason"
+              value={formData.reason}
+              onChange={(event) => setFormData({ ...formData, reason: event.target.value })}
+            >
+              <option>Opportunity</option>
+              <option>Project</option>
+              <option>Collaboration</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div className="cx-field cx-field--wide">
+            <label htmlFor="contact-message">The interesting part</label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows={5}
+              value={formData.message}
+              onChange={(event) => setFormData({ ...formData, message: event.target.value })}
+              placeholder="A little context, the ambition, and what a great outcome looks like…"
+              required
+            />
+          </div>
+          <button type="submit" className="cx-contact-form__submit">
+            <span>Open in email</span>
+            <ArrowUpRight aria-hidden="true" />
+          </button>
+        </form>
+      </section>
     </main>
   );
 }
