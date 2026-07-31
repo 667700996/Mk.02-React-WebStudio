@@ -15,7 +15,7 @@ export default function ContactPage() {
   });
   const [submissionStatus, setSubmissionStatus] = useState<'success' | 'error' | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -34,7 +34,15 @@ export default function ContactPage() {
 
     if (response.ok) {
       setSubmissionStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        budget: '',
+        timeline: '',
+        services: '',
+        message: '',
+      });
     } else {
       setSubmissionStatus('error');
     }
