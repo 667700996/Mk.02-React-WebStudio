@@ -1,14 +1,13 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Space_Grotesk } from 'next/font/google';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.scss';
 import { Suspense } from 'react';
 import AppNavbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ThemeProvider } from '@/components/ThemeProvider';
 import { siteConfig } from '@/lib/siteConfig';
 import Analytics from '@/components/Analytics';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
-import SmoothScrolling from '@/components/ui/SmoothScrolling';
 
 const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -27,7 +26,7 @@ const display = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: siteConfig.name,
+    default: 'Commonline — Design Engineering Practice',
     template: `%s | ${siteConfig.shortName}`,
   },
   description: siteConfig.description,
@@ -41,10 +40,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: new URL('/og.png', siteConfig.url).toString(),
-        width: 1734,
-        height: 907,
-        alt: 'Commonline — We build impossible interfaces.',
+        url: new URL('/og-commonline-2026.png', siteConfig.url).toString(),
+        width: 1731,
+        height: 909,
+        alt: 'Commonline — Make complexity feel inevitable.',
       },
     ],
   },
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [new URL('/og.png', siteConfig.url).toString()],
+    images: [new URL('/og-commonline-2026.png', siteConfig.url).toString()],
   },
   alternates: {
     canonical: siteConfig.url,
@@ -65,19 +64,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-100" suppressHydrationWarning>
+    <html lang="en" className="h-100" data-bs-theme="dark">
       <body className={`${sans.variable} ${display.variable} d-flex flex-column min-vh-100`}>
-        <ThemeProvider attribute="data-bs-theme" defaultTheme="dark" enableSystem={false}>
-          <SmoothScrolling>
-            <ScrollProgressBar />
-            <AppNavbar />
-            <div style={{ flex: '1 0 auto' }}>{children}</div>
-            <Footer />
-            <Suspense fallback={null}>
-              <Analytics />
-            </Suspense>
-          </SmoothScrolling>
-        </ThemeProvider>
+        <ScrollProgressBar />
+        <AppNavbar />
+        <div style={{ flex: '1 0 auto' }}>{children}</div>
+        <Footer />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </body>
     </html>
   );

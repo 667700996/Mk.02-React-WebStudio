@@ -12,9 +12,31 @@ export default function AppNavbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [open]);
 
   return (
     <header className={`cx-nav ${scrolled ? 'is-scrolled' : ''}`}>
@@ -45,6 +67,7 @@ export default function AppNavbar() {
                 key={item.href}
                 href={item.href}
                 className={active ? 'is-active' : ''}
+                aria-current={active ? 'page' : undefined}
                 onClick={() => setOpen(false)}
               >
                 <span>0{index + 1}</span>

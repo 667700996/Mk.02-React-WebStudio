@@ -1,9 +1,7 @@
-@import '../styles/design-tokens';
-@import '~bootstrap/scss/bootstrap';
-
-// Imported Partials
-@import '../styles/partials/base';
-@import '../styles/partials/hero';
-@import '../styles/partials/features';
-@import '../styles/partials/content';
-@import '../styles/partials/experience';
+@use '../styles/design-tokens';
+@use '../styles/partials/base';
+@use '../styles/partials/hero';
+@use '../styles/partials/features';
+@use '../styles/partials/content';
+@use '../styles/partials/experience';
+@use '../styles/partials/portfolio';

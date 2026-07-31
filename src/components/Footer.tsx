@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { siteConfig } from '@/lib/siteConfig';
 import { ArrowUpRight } from 'lucide-react';
@@ -14,7 +12,7 @@ export default function Footer() {
           <span className="cx-brand__mark" aria-hidden="true"><i /></span>
           <span>{siteConfig.shortName}</span>
         </Link>
-        <p>Independent creative technology studio<br />Seoul · Working worldwide</p>
+        <p>Independent design engineering practice<br />Seoul · Working worldwide</p>
         <div className="cx-footer__social">
           {siteConfig.socials.slice(0, 3).map((social) => (
             <a key={social.label} href={social.href} target="_blank" rel="noreferrer">
@@ -26,7 +24,7 @@ export default function Footer() {
       </div>
       <div className="cx-footer__bottom">
         <small>© {year} {siteConfig.name}</small>
-        <span>Built with curiosity, code, and unreasonable care.</span>
+        <span>Clarity, character, and production discipline.</span>
         <div>
           <Link href="/privacy">Privacy</Link>
           <Link href="/terms">Terms</Link>
