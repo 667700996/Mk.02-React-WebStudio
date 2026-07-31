@@ -9,8 +9,6 @@ import { siteConfig } from '@/lib/siteConfig';
 import Analytics from '@/components/Analytics';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 import SmoothScrolling from '@/components/ui/SmoothScrolling';
-import FloatingDock from '@/components/ui/FloatingDock';
-import CommandMenu from '@/components/CommandMenu';
 
 const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -60,14 +58,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-100" suppressHydrationWarning>
       <body className={`${sans.variable} ${display.variable} d-flex flex-column min-vh-100`}>
-        <ThemeProvider attribute="data-bs-theme" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="data-bs-theme" defaultTheme="dark" enableSystem={false}>
           <SmoothScrolling>
             <ScrollProgressBar />
             <AppNavbar />
             <div style={{ flex: '1 0 auto' }}>{children}</div>
             <Footer />
-            <FloatingDock />
-            <CommandMenu />
             <Suspense fallback={null}>
               <Analytics />
             </Suspense>
