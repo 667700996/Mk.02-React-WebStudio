@@ -1,4 +1,5 @@
 import { getSortedPostsData } from '@/lib/posts';
+import { portfolioProjects } from '@/lib/portfolioProjects';
 import { siteConfig } from '@/lib/siteConfig';
 
 export async function GET() {
@@ -32,6 +33,17 @@ export async function GET() {
           <loc>${siteConfig.url}/blog/${id}</loc>
           <lastmod>${date}</lastmod>
           <priority>0.6</priority>
+        </url>
+      `;
+    })
+    .join('')}
+  ${portfolioProjects
+    .map(({ slug }) => {
+      return `
+        <url>
+          <loc>${siteConfig.url}/work/${slug}</loc>
+          <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
+          <priority>0.9</priority>
         </url>
       `;
     })
