@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform, Variants, useReducedMotion } from 'framer-motion';
-import { ArrowRight, Play, CheckCircle2, Box } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import HeroNetwork from '@/components/home/HeroNetwork';
 
 const textVariant: Variants = {
