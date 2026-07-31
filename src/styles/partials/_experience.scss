@@ -764,7 +764,7 @@ body::after {
 
 .cx-axiom-grid i {
   display: block;
-  height: calc(16% + (var(--i) % 6) * 13%);
+  height: var(--bar-start);
   background: linear-gradient(to top, rgba(215, 255, 63, 0.1), var(--cx-acid));
   box-shadow: 0 0 25px rgba(215, 255, 63, 0.18);
   animation: cx-bars 2.6s ease-in-out calc(var(--i) * -0.1s) infinite alternate;
@@ -1356,7 +1356,7 @@ body::after {
 }
 
 @keyframes cx-bars {
-  to { height: calc(25% + (var(--i) % 5) * 12%); filter: hue-rotate(35deg); }
+  to { height: var(--bar-end); filter: hue-rotate(35deg); }
 }
 
 @media (max-width: 991.98px) {

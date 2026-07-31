@@ -143,7 +143,16 @@ function ProjectVisual({ accent, index }: { accent: string; index: number }) {
   return (
     <div className={`cx-project-visual cx-project-visual--${accent}`} aria-hidden="true">
       <div className="cx-axiom-grid">
-        {Array.from({ length: 18 }, (_, item) => <i key={item} style={{ '--i': item } as React.CSSProperties} />)}
+        {Array.from({ length: 18 }, (_, item) => (
+          <i
+            key={item}
+            style={{
+              '--i': item,
+              '--bar-start': `${16 + (item % 6) * 13}%`,
+              '--bar-end': `${25 + (item % 5) * 12}%`,
+            } as React.CSSProperties}
+          />
+        ))}
       </div>
       <div className="cx-axiom-label">A/</div>
       <div className="cx-visual-data"><span>SYNTHETIC MIND</span><span>MODEL 4.02</span></div>
