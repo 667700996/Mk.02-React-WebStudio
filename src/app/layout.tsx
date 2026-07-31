@@ -39,11 +39,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: new URL('/og.png', siteConfig.url).toString(),
+        width: 1734,
+        height: 907,
+        alt: 'Commonline — We build impossible interfaces.',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [new URL('/og.png', siteConfig.url).toString()],
   },
   alternates: {
     canonical: siteConfig.url,

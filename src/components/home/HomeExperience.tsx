@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import {
   motion,
@@ -11,9 +12,12 @@ import {
 } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, Asterisk, MoveUpRight } from 'lucide-react';
 import { PointerEvent, useEffect, useRef, useState } from 'react';
-import SignalCore from './SignalCore';
 
 const ease = [0.16, 1, 0.3, 1] as const;
+const SignalCore = dynamic(() => import('./SignalCore'), {
+  ssr: false,
+  loading: () => <div className="cx-hero__signal-fallback" aria-hidden="true" />,
+});
 
 const projects = [
   {

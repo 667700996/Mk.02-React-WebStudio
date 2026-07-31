@@ -331,6 +331,19 @@ body::after {
   pointer-events: none;
 }
 
+.cx-hero__signal-fallback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(34vw, 430px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(215, 255, 63, 0.4);
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 34%, var(--cx-acid), var(--cx-violet) 20%, #160943 54%, transparent 72%);
+  box-shadow: 0 0 80px rgba(122, 92, 255, 0.32);
+  transform: translate(-50%, -50%);
+}
+
 .cx-hero__copy {
   width: 100%;
 }
