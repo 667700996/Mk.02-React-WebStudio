@@ -46,6 +46,7 @@ export const siteConfig: SiteConfig = {
     { label: 'Work', href: '/#work' },
     { label: 'Process', href: '/#process' },
     { label: 'Lab', href: '/#lab' },
+    { label: 'About', href: '/about' },
   ],
   primaryCta: { label: 'Begin a project', href: '/contact' },
   secondaryCta: { label: 'Explore selected work', href: '/#work' },

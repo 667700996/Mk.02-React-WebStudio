@@ -12,39 +12,14 @@ import {
 } from 'framer-motion';
 import { ArrowDown, ArrowUpRight, Asterisk, MoveUpRight } from 'lucide-react';
 import { PointerEvent, useEffect, useRef, useState } from 'react';
+import ProjectArtwork from '@/components/work/ProjectArtwork';
+import { portfolioProjects, type PortfolioProject } from '@/lib/portfolioProjects';
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const SignalCore = dynamic(() => import('./SignalCore'), {
   ssr: false,
   loading: () => <div className="cx-hero__signal-fallback" aria-hidden="true" />,
 });
-
-const projects = [
-  {
-    index: '01',
-    title: 'HALO',
-    type: 'Spatial Operating System',
-    tags: ['Art direction', 'WebGL', 'Product'],
-    accent: 'acid',
-    description: 'A spatial interface that turns orbital infrastructure into a calm, explorable universe.',
-  },
-  {
-    index: '02',
-    title: 'FLUX',
-    type: 'Generative Identity Engine',
-    tags: ['Brand system', 'Motion', 'Realtime'],
-    accent: 'violet',
-    description: 'A living identity that continuously recomposes itself from sound, movement, and audience.',
-  },
-  {
-    index: '03',
-    title: 'AXIOM',
-    type: 'Synthetic Intelligence Lab',
-    tags: ['Experience', 'Strategy', 'Development'],
-    accent: 'blue',
-    description: 'Complex machine intelligence translated into a tactile, legible and deeply human experience.',
-  },
-];
 
 const disciplines = [
   ['01', 'Direction', 'Positioning, narrative, visual worlds'],
@@ -121,50 +96,7 @@ function CursorAura() {
   );
 }
 
-function ProjectVisual({ accent, index }: { accent: string; index: number }) {
-  if (index === 0) {
-    return (
-      <div className={`cx-project-visual cx-project-visual--${accent}`} aria-hidden="true">
-        <div className="cx-halo">
-          <span /><span /><span /><i />
-          <b>ORBIT / 37.492</b>
-        </div>
-        <div className="cx-visual-data"><span>ALT 408 KM</span><span>VEL 7.66 KM/S</span></div>
-      </div>
-    );
-  }
-  if (index === 1) {
-    return (
-      <div className={`cx-project-visual cx-project-visual--${accent}`} aria-hidden="true">
-        <div className="cx-flux-type">
-          <span>F</span><span>L</span><span>U</span><span>X</span>
-        </div>
-        <div className="cx-flux-orb" />
-        <div className="cx-visual-data"><span>FORM 08—26</span><span>LIVE IDENTITY</span></div>
-      </div>
-    );
-  }
-  return (
-    <div className={`cx-project-visual cx-project-visual--${accent}`} aria-hidden="true">
-      <div className="cx-axiom-grid">
-        {Array.from({ length: 18 }, (_, item) => (
-          <i
-            key={item}
-            style={{
-              '--i': item,
-              '--bar-start': `${16 + (item % 6) * 13}%`,
-              '--bar-end': `${25 + (item % 5) * 12}%`,
-            } as React.CSSProperties}
-          />
-        ))}
-      </div>
-      <div className="cx-axiom-label">A/</div>
-      <div className="cx-visual-data"><span>SYNTHETIC MIND</span><span>MODEL 4.02</span></div>
-    </div>
-  );
-}
-
-function ProjectCard({ project, index }: { project: typeof projects[number]; index: number }) {
+function ProjectCard({ project, index }: { project: PortfolioProject; index: number }) {
   const cardRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
 
@@ -200,11 +132,16 @@ function ProjectCard({ project, index }: { project: typeof projects[number]; ind
         <span>{project.type}</span>
         <MoveUpRight aria-hidden="true" />
       </div>
-      <ProjectVisual accent={project.accent} index={index} />
+      <Link href={`/work/${project.slug}`} className="cx-project__visual-link" aria-label={`Read the ${project.title} case study`}>
+        <ProjectArtwork accent={project.accent} index={index} />
+      </Link>
       <div className="cx-project__body">
         <div>
           <h3>{project.title}<sup>®</sup></h3>
           <p>{project.description}</p>
+          <Link href={`/work/${project.slug}`} className="cx-project__case-link">
+            View case study <ArrowUpRight aria-hidden="true" />
+          </Link>
         </div>
         <ul>
           {project.tags.map((tag) => <li key={tag}>{tag}</li>)}
@@ -307,7 +244,7 @@ export default function HomeExperience() {
           <p>Selected collaborations from the edge of brand, technology and culture.</p>
         </div>
         <div className="cx-work__list">
-          {projects.map((project, index) => <ProjectCard key={project.title} project={project} index={index} />)}
+          {portfolioProjects.map((project, index) => <ProjectCard key={project.title} project={project} index={index} />)}
         </div>
       </section>
 
